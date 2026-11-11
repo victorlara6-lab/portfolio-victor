@@ -4,6 +4,9 @@
 CLAUDE.md
 .claude/
 
+# Automação de notas: fica só no computador por enquanto (fora do portfólio)
+automacao-notas/
+
 # Banco de dados de teste e arquivos temporários do Python
 *.db
 __pycache__/

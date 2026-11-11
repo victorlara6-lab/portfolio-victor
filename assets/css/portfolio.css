@@ -286,6 +286,8 @@ strong { color: #fff; }
 .mini__links a { display: inline-flex; align-items: center; gap: 6px; color: var(--limao); }
 .mini__links a:hover { text-decoration: underline; }
 .mini h3 { font-size: 1.25rem; margin: 12px 0 6px; }
+/* Dois projetos lado a lado a partir do tablet */
+@media (min-width: 640px) { .projetos-mini { grid-template-columns: repeat(2, 1fr); } }
 .mini p { color: var(--texto-suave); font-size: .95rem; }
 
 /* PASSOS */
