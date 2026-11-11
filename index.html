@@ -1,14 +1,419 @@
 <!DOCTYPE html>
-<!-- PROVISÓRIO: enquanto a página do portfólio não fica pronta,
-     quem abrir o link principal é levado direto para o site da clínica. -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio de Victor</title>
-  <meta http-equiv="refresh" content="0; url=clinica/">
+
+  <!-- ===== SEO e prévia ao compartilhar o link ===== -->
+  <title>Victor | Sites e automações para pequenas empresas</title>
+  <meta name="description" content="Desenvolvedor freelancer: sites bonitos e rápidos, landing pages e automações em Python para pequenas empresas. Peça seu orçamento.">
+  <meta name="theme-color" content="#0C0E13">
+  <meta property="og:title" content="Victor | Sites e automações">
+  <meta property="og:description" content="Sites que vendem e automações que economizam o seu tempo.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- ===== Fontes ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/portfolio.css?v=2">
+  <!-- Marca que o JavaScript está ativo (as animações de entrada dependem disso) -->
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-  <p>Redirecionando para o <a href="clinica/">site da Clínica Vitalis</a>…</p>
+
+<!-- ======================================================================
+     ÍCONES SVG reutilizáveis (<use href="#i-nome">)
+     ====================================================================== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-codigo" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-engrenagem" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="i-painel" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></symbol>
+  <symbol id="i-ferramenta" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M3 20l1.4-4.2A8.5 8.5 0 1 1 7.8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-seta-diag" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+  <symbol id="i-maleta" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+  <symbol id="i-cima" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-celular" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-raio" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></symbol>
+  <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+</svg>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ======================================================================
+     CABEÇALHO
+     ====================================================================== -->
+<header class="topo" id="topo">
+  <div class="container topo__barra">
+    <a href="#inicio" class="logo" aria-label="Victor — início">
+      <span class="logo__marca">V</span><span>victor<em>.dev</em></span>
+    </a>
+
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#precos">Preços</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="#contato" class="btn btn--limao menu__cta">Pedir orçamento</a>
+    </nav>
+
+    <button class="hamburguer" id="btn-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="progresso" id="progresso" aria-hidden="true"></div>
+</header>
+
+<main id="conteudo">
+
+<!-- ======================================================================
+     HERO
+     ====================================================================== -->
+<section class="hero" id="inicio">
+  <div class="hero__grade-fundo" aria-hidden="true"></div>
+  <div class="hero__luz" aria-hidden="true"></div>
+
+  <div class="container hero__conteudo">
+    <div class="hero__texto">
+      <span class="disponivel revelar"><span class="ponto-vivo"></span> Disponível para novos projetos</span>
+
+      <h1 class="revelar">
+        Sites que <span class="destaque">vendem</span>.<br>
+        Automações que <span class="destaque destaque--lilas">economizam</span> o seu tempo.
+      </h1>
+
+      <p class="hero__lead revelar">
+        Oi, eu sou o <strong>Victor</strong>, estudante de Engenharia de Software.
+        Crio sites bonitos e rápidos e automatizo tarefas chatas de planilhas e relatórios para pequenas empresas.
+      </p>
+
+      <div class="hero__botoes revelar">
+        <a href="#projetos" class="btn btn--limao btn--grande">Ver projetos <svg class="ic"><use href="#i-seta"/></svg></a>
+        <!-- Número trocado automaticamente pelo assets/js/portfolio.js (CONFIG.whatsapp) -->
+        <a href="https://wa.me/5511999999999" data-whats class="btn btn--vidro btn--grande" target="_blank" rel="noopener">
+          <svg class="ic"><use href="#i-chat"/></svg> Chamar no WhatsApp
+        </a>
+      </div>
+
+      <ul class="hero__garantias revelar">
+        <li><svg class="ic"><use href="#i-celular"/></svg> Funciona no celular</li>
+        <li><svg class="ic"><use href="#i-raio"/></svg> Carrega rápido</li>
+        <li><svg class="ic"><use href="#i-relogio"/></svg> Resposta em até 24h</li>
+      </ul>
+    </div>
+
+    <!-- Janela de código que "digita" sozinha (texto definido no JavaScript) -->
+    <div class="codigo revelar" aria-hidden="true">
+      <div class="codigo__barra">
+        <span></span><span></span><span></span>
+        <small>novo-projeto.js</small>
+      </div>
+      <pre class="codigo__corpo"><code id="codigo-digitando"></code><span class="cursor">▍</span></pre>
+    </div>
+  </div>
+</section>
+
+<!-- Faixa de tecnologias rolando -->
+<section class="tecnologias" aria-label="Tecnologias que eu uso">
+  <div class="letreiro">
+    <ul class="letreiro__trilho">
+      <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>SQL</li><li>JSON</li><li>Git &amp; GitHub</li><li>Excel</li><li>Design responsivo</li><li>SEO</li>
+      <li aria-hidden="true">HTML</li><li aria-hidden="true">CSS</li><li aria-hidden="true">JavaScript</li><li aria-hidden="true">Python</li><li aria-hidden="true">SQL</li><li aria-hidden="true">JSON</li><li aria-hidden="true">Git &amp; GitHub</li><li aria-hidden="true">Excel</li><li aria-hidden="true">Design responsivo</li><li aria-hidden="true">SEO</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================================================================
+     SERVIÇOS
+     ====================================================================== -->
+<section class="secao" id="servicos">
+  <div class="container">
+    <header class="titulo revelar">
+      <span class="rotulo">// serviços</span>
+      <h2>O que eu posso fazer <span class="destaque">pela sua empresa</span></h2>
+    </header>
+
+    <div class="grade grade--4">
+      <article class="card servico revelar">
+        <span class="servico__icone"><svg class="ic"><use href="#i-codigo"/></svg></span>
+        <h3>Sites e landing pages</h3>
+        <p>Site profissional com a cara da sua marca, botão de WhatsApp e pronto para aparecer no Google.</p>
+        <ul class="lista-check"><li>Celular, tablet e computador</li><li>Animações suaves</li><li>Publicação inclusa</li></ul>
+      </article>
+      <article class="card servico revelar">
+        <span class="servico__icone servico__icone--lilas"><svg class="ic"><use href="#i-engrenagem"/></svg></span>
+        <h3>Automações</h3>
+        <p>Scripts em Python que fazem sozinhos o trabalho repetitivo de planilhas, relatórios e arquivos.</p>
+        <ul class="lista-check"><li>Planilhas Excel geradas sozinhas</li><li>Relatórios mensais</li><li>Menos erro de digitação</li></ul>
+      </article>
+      <article class="card servico revelar">
+        <span class="servico__icone"><svg class="ic"><use href="#i-painel"/></svg></span>
+        <h3>Sistemas simples</h3>
+        <p>Agendamento online, painel de controle e cadastro com banco de dados para organizar o dia a dia.</p>
+        <ul class="lista-check"><li>Agendamento pela internet</li><li>Painel com filtros</li><li>Exportação para Excel</li></ul>
+      </article>
+      <article class="card servico revelar">
+        <span class="servico__icone servico__icone--lilas"><svg class="ic"><use href="#i-ferramenta"/></svg></span>
+        <h3>Manutenção</h3>
+        <p>Atualizo textos, fotos e preços do seu site e mantenho tudo funcionando, sem dor de cabeça.</p>
+        <ul class="lista-check"><li>Alterações rápidas</li><li>Backup do site</li><li>Suporte pelo WhatsApp</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     PROJETOS
+     ====================================================================== -->
+<section class="secao secao--alt" id="projetos">
+  <div class="container">
+    <header class="titulo revelar">
+      <span class="rotulo">// projetos</span>
+      <h2>Trabalhos que <span class="destaque">falam por mim</span></h2>
+      <p>Projetos de demonstração com empresas fictícias, feitos para mostrar o que eu entrego.</p>
+    </header>
+
+    <!-- Projeto em destaque: Clínica Vitalis, com prévia AO VIVO do site -->
+    <article class="destaque-projeto revelar">
+      <div class="previa" id="previa">
+        <!-- Prévia no computador: o site real, encolhido (a escala é calculada no JavaScript) -->
+        <div class="previa__pc">
+          <div class="previa__barra"><span></span><span></span><span></span><small>clinica-vitalis</small></div>
+          <div class="previa__tela" data-largura="1280">
+            <iframe src="clinica/index.html" title="Prévia do site da Clínica Vitalis no computador" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+        </div>
+        <!-- Prévia no celular -->
+        <div class="previa__celular">
+          <div class="previa__tela" data-largura="390">
+            <iframe src="clinica/index.html" title="Prévia do site da Clínica Vitalis no celular" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="destaque-projeto__info">
+        <span class="status status--pronto">● No ar</span>
+        <h3>Clínica Vitalis</h3>
+        <p>Site completo para clínica médica com <strong>agendamento online</strong>, painel da recepção e banco de dados. Modo claro/escuro, animações e 100% responsivo.</p>
+        <ul class="tags">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>SQL</li><li>JSON</li>
+        </ul>
+        <ul class="lista-check lista-check--compacta">
+          <li>Formulário com horários disponíveis e validação</li>
+          <li>Servidor em Python com banco SQLite</li>
+          <li>Painel com filtros e exportação para Excel</li>
+        </ul>
+        <div class="destaque-projeto__botoes">
+          <a href="clinica/index.html" class="btn btn--limao" target="_blank" rel="noopener">Ver site <svg class="ic"><use href="#i-seta-diag"/></svg></a>
+          <a href="https://github.com/victorlara6-lab/portfolio-victor/tree/main/clinica" class="btn btn--vidro" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Ver código</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Outros projetos -->
+    <div class="grade grade--3 projetos-mini">
+      <article class="card mini revelar">
+        <div class="mini__capa mini__capa--restaurante" aria-hidden="true"><span>🍝</span></div>
+        <span class="status status--breve">Em breve</span>
+        <h3>Site de restaurante</h3>
+        <p>Cardápio, galeria de fotos, horários e reservas pelo WhatsApp.</p>
+      </article>
+      <article class="card mini revelar">
+        <div class="mini__capa mini__capa--loja" aria-hidden="true"><span>🛍️</span></div>
+        <span class="status status--breve">Em breve</span>
+        <h3>Loja virtual</h3>
+        <p>Vitrine de produtos, categorias e carrinho visual para pedidos.</p>
+      </article>
+      <article class="card mini revelar">
+        <div class="mini__capa mini__capa--automacao" aria-hidden="true">
+          <code>notas.txt → planilha.xlsx</code>
+        </div>
+        <span class="status status--dev">Em desenvolvimento</span>
+        <h3>Automação de notas fiscais</h3>
+        <p>Script em Python que lê as notas emitidas no mês e monta a planilha Excel sozinho. Projeto real, usado no meu trabalho.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     COMO FUNCIONA
+     ====================================================================== -->
+<section class="secao" id="processo">
+  <div class="container">
+    <header class="titulo revelar">
+      <span class="rotulo">// como funciona</span>
+      <h2>Do primeiro “oi” ao <span class="destaque">site no ar</span></h2>
+    </header>
+    <ol class="passos">
+      <li class="revelar"><span class="passos__num">01</span><h3>Conversa</h3><p>Você me conta sobre a sua empresa e o que precisa. Sem compromisso.</p></li>
+      <li class="revelar"><span class="passos__num">02</span><h3>Proposta</h3><p>Envio prazo e valor fechado, sem surpresa no final.</p></li>
+      <li class="revelar"><span class="passos__num">03</span><h3>Criação</h3><p>Você acompanha as prévias e pede ajustes durante o projeto.</p></li>
+      <li class="revelar"><span class="passos__num">04</span><h3>Entrega</h3><p>Publico o site, explico como funciona e sigo à disposição.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================================================================
+     PREÇOS "A PARTIR DE"
+     ====================================================================== -->
+<section class="secao secao--alt" id="precos">
+  <div class="container">
+    <header class="titulo revelar">
+      <span class="rotulo">// investimento</span>
+      <h2>Preços <span class="destaque">a partir de</span></h2>
+      <p>O valor final depende do tamanho do projeto. O orçamento é gratuito.</p>
+    </header>
+
+    <div class="grade grade--4 precos">
+      <article class="card preco revelar">
+        <h3>Landing page</h3>
+        <p class="preco__valor"><small>a partir de</small> R$ 500</p>
+        <p>Uma página para divulgar seu serviço e trazer clientes pelo WhatsApp.</p>
+        <ul class="lista-check"><li>1 página completa</li><li>Botão de WhatsApp</li><li>Publicação inclusa</li></ul>
+        <a href="#contato" class="btn btn--vidro btn--bloco" data-plano="Landing page">Quero esse</a>
+      </article>
+      <article class="card preco preco--popular revelar">
+        <span class="preco__selo">Mais pedido</span>
+        <h3>Site completo</h3>
+        <p class="preco__valor"><small>a partir de</small> R$ 1.000</p>
+        <p>Site com várias seções, galeria, formulário e a identidade da sua marca.</p>
+        <ul class="lista-check"><li>Várias seções</li><li>Animações e modo escuro</li><li>Otimizado para o Google</li></ul>
+        <a href="#contato" class="btn btn--limao btn--bloco" data-plano="Site completo">Quero esse</a>
+      </article>
+      <article class="card preco revelar">
+        <h3>Automação</h3>
+        <p class="preco__valor"><small>a partir de</small> R$ 300</p>
+        <p>Um script que faz sozinho uma tarefa repetitiva do seu dia a dia.</p>
+        <ul class="lista-check"><li>Planilhas e relatórios</li><li>Explicação de uso</li><li>Ajustes após a entrega</li></ul>
+        <a href="#contato" class="btn btn--vidro btn--bloco" data-plano="Automação">Quero esse</a>
+      </article>
+      <article class="card preco revelar">
+        <h3>Manutenção</h3>
+        <p class="preco__valor"><small>a partir de</small> R$ 100<small class="preco__mes">/mês</small></p>
+        <p>Seu site sempre atualizado, sem você precisar mexer em código.</p>
+        <ul class="lista-check"><li>Alterações de conteúdo</li><li>Backup</li><li>Suporte pelo WhatsApp</li></ul>
+        <a href="#contato" class="btn btn--vidro btn--bloco" data-plano="Manutenção">Quero esse</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     SOBRE MIM
+     ====================================================================== -->
+<section class="secao" id="sobre">
+  <div class="container sobre">
+    <div class="sobre__cartao revelar">
+      <div class="sobre__avatar" aria-hidden="true">V</div>
+      <dl class="sobre__fatos">
+        <div><dt>Formação</dt><dd>Engenharia de Software (cursando)</dd></div>
+        <div><dt>Foco</dt><dd>Sites e automações para pequenas empresas</dd></div>
+        <div><dt>Local</dt><dd>Brasil · atendimento online</dd></div>
+        <div><dt>Linguagens</dt><dd>HTML, CSS, JavaScript, Python, SQL</dd></div>
+      </dl>
+    </div>
+    <div class="sobre__texto">
+      <header class="titulo titulo--esquerda revelar">
+        <span class="rotulo">// sobre mim</span>
+        <h2>Prazer, <span class="destaque">Victor</span></h2>
+      </header>
+      <p class="revelar">Sou estudante de Engenharia de Software e gosto de transformar problemas do dia a dia em soluções simples.</p>
+      <p class="revelar">No meu trabalho, emito dezenas de notas fiscais por mês para uma clínica. Foi daí que nasceu minha primeira automação: um programa em Python que organiza tudo numa planilha. Esse é o tipo de ajuda que eu quero levar para outras empresas: <strong>menos tempo perdido, mais tempo para o que importa</strong>.</p>
+      <p class="revelar">Cada projeto é feito à mão, com código limpo e comentado, e você fala direto comigo do começo ao fim.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     DÚVIDAS
+     ====================================================================== -->
+<section class="secao secao--alt" id="duvidas">
+  <div class="container container--estreito">
+    <header class="titulo revelar">
+      <span class="rotulo">// dúvidas</span>
+      <h2>Perguntas <span class="destaque">frequentes</span></h2>
+    </header>
+    <div class="acordeao">
+      <details class="revelar" open><summary>Quanto tempo leva para ficar pronto?</summary><p>Uma landing page costuma ficar pronta em 5 a 7 dias. Um site completo, em 2 a 3 semanas. O prazo exato vai na proposta.</p></details>
+      <details class="revelar"><summary>Preciso comprar domínio e hospedagem?</summary><p>Não é obrigatório: posso publicar de graça num endereço gratuito. Se quiser um domínio próprio (ex.: suaempresa.com.br), eu te ajudo a contratar e configurar.</p></details>
+      <details class="revelar"><summary>Posso pedir alterações depois?</summary><p>Sim. Os ajustes durante o projeto estão inclusos. Depois da entrega, você pode fazer um plano de manutenção ou pedir alterações avulsas.</p></details>
+      <details class="revelar"><summary>Como funciona o pagamento?</summary><p>Normalmente 50% para começar e 50% na entrega, via Pix. Projetos pela Workana seguem as regras da plataforma.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CONTATO — o formulário monta a mensagem e abre o WhatsApp
+     ====================================================================== -->
+<section class="secao contato" id="contato">
+  <div class="container contato__caixa revelar">
+    <div class="contato__texto">
+      <span class="rotulo">// vamos conversar</span>
+      <h2>Tem um projeto em mente? <span class="destaque">Me chama.</span></h2>
+      <p>Conte rapidinho o que você precisa. A mensagem chega pronta no meu WhatsApp e eu respondo em até 24h.</p>
+      <div class="contato__links">
+        <a href="https://wa.me/5511999999999" data-whats class="link-contato" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> WhatsApp</a>
+        <a href="https://github.com/victorlara6-lab" class="link-contato" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> GitHub</a>
+        <!-- Aparece só quando CONFIG.workana estiver preenchido no portfolio.js -->
+        <a href="#" data-workana class="link-contato" target="_blank" rel="noopener" hidden><svg class="ic"><use href="#i-maleta"/></svg> Workana</a>
+      </div>
+    </div>
+
+    <form class="formulario" id="form-contato" novalidate>
+      <div class="campo">
+        <label for="c-nome">Seu nome</label>
+        <input id="c-nome" name="nome" type="text" autocomplete="name" required placeholder="Como posso te chamar?">
+        <small class="campo__erro" aria-live="polite"></small>
+      </div>
+      <div class="campo">
+        <label for="c-empresa">Empresa <span class="opcional">(opcional)</span></label>
+        <input id="c-empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nome do seu negócio">
+      </div>
+      <fieldset class="campo">
+        <legend>O que você precisa?</legend>
+        <div class="opcoes" id="opcoes-projeto">
+          <label><input type="radio" name="tipo" value="Landing page"><span>Landing page</span></label>
+          <label><input type="radio" name="tipo" value="Site completo"><span>Site completo</span></label>
+          <label><input type="radio" name="tipo" value="Automação"><span>Automação</span></label>
+          <label><input type="radio" name="tipo" value="Manutenção"><span>Manutenção</span></label>
+          <label><input type="radio" name="tipo" value="Outro"><span>Outro</span></label>
+        </div>
+        <small class="campo__erro" aria-live="polite"></small>
+      </fieldset>
+      <div class="campo">
+        <label for="c-mensagem">Conte um pouco</label>
+        <textarea id="c-mensagem" name="mensagem" rows="4" maxlength="600" required placeholder="Ex.: tenho uma barbearia e quero um site com agendamento…"></textarea>
+        <small class="campo__erro" aria-live="polite"></small>
+      </div>
+      <button class="btn btn--limao btn--grande btn--bloco" type="submit"><svg class="ic"><use href="#i-chat"/></svg> Enviar pelo WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="container rodape__conteudo">
+    <a href="#inicio" class="logo"><span class="logo__marca">V</span><span>victor<em>.dev</em></span></a>
+    <p>Feito à mão com HTML, CSS e JavaScript · © <span id="ano">2026</span> Victor</p>
+    <p class="rodape__nota">Os projetos de demonstração usam empresas e pessoas fictícias.</p>
+  </div>
+</footer>
+
+<button class="voltar-topo" id="voltar-topo" type="button" aria-label="Voltar ao topo"><svg class="ic"><use href="#i-cima"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/portfolio.js?v=1" defer></script>
 </body>
 </html>
