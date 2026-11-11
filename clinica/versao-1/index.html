@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- VERSÃO 1 (original) do site da Clínica Vitalis, guardada para comparação "antes e depois".
+     A versão atual fica em clinica/index.html -->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Clínica Vitalis | Cuidado que transforma</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--azul:#0b3d5c;--verde:#14b8a6;--claro:#f0fdfa;--texto:#334155}
+body{font-family:'Poppins',sans-serif;color:var(--texto);line-height:1.6}
+html{scroll-behavior:smooth}
+a{text-decoration:none}
+header{position:fixed;top:0;width:100%;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.06);z-index:100}
+nav{max-width:1150px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
+.logo{font-size:1.5rem;font-weight:700;color:var(--azul)}
+.logo span{color:var(--verde)}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{color:var(--azul);font-weight:500;transition:.3s}
+nav ul a:hover{color:var(--verde)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--verde),#0d9488);color:#fff;padding:14px 32px;border-radius:50px;font-weight:600;box-shadow:0 10px 25px rgba(20,184,166,.35);transition:.3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(20,184,166,.5)}
+.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#e0f2fe 0%,var(--claro) 60%,#fff 100%);padding:120px 24px 60px}
+.hero-box{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+.tag{display:inline-block;background:#ccfbf1;color:#0f766e;padding:6px 16px;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:18px}
+.hero h1{font-size:3.2rem;line-height:1.15;color:var(--azul);margin-bottom:20px}
+.hero h1 span{color:var(--verde)}
+.hero p{font-size:1.1rem;margin-bottom:32px;max-width:500px}
+.hero img{width:100%;border-radius:30px;box-shadow:0 30px 60px rgba(11,61,92,.2);animation:flutua 5s ease-in-out infinite}
+@keyframes flutua{50%{transform:translateY(-15px)}}
+.numeros{display:flex;gap:40px;margin-top:40px}
+.numeros b{display:block;font-size:2rem;color:var(--azul)}
+section{padding:100px 24px}
+.titulo{text-align:center;max-width:600px;margin:0 auto 60px}
+.titulo h2{font-size:2.4rem;color:var(--azul)}
+.grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px}
+.card{background:#fff;padding:36px 28px;border-radius:24px;box-shadow:0 10px 40px rgba(0,0,0,.06);transition:.4s;border:1px solid #f1f5f9}
+.card:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(20,184,166,.2)}
+.icone{font-size:2.4rem;width:70px;height:70px;display:flex;align-items:center;justify-content:center;background:var(--claro);border-radius:18px;margin-bottom:20px}
+.card h3{color:var(--azul);margin-bottom:10px}
+.equipe{background:var(--claro)}
+.medico{text-align:center;padding:0;overflow:hidden}
+.medico img{width:100%;height:280px;object-fit:cover}
+.medico div{padding:22px}
+.medico small{color:var(--verde);font-weight:600}
+.depo{font-style:italic}
+.depo b{display:block;margin-top:16px;font-style:normal;color:var(--azul)}
+.cta{background:linear-gradient(135deg,var(--azul),#0f766e);color:#fff;text-align:center;border-radius:30px;max-width:1100px;margin:0 auto 100px;padding:70px 30px}
+.cta h2{font-size:2.3rem;margin-bottom:14px}
+.cta .btn{background:#fff;color:var(--azul);margin-top:24px}
+footer{background:var(--azul);color:#cbd5e1;text-align:center;padding:40px 24px}
+.whats{position:fixed;bottom:24px;right:24px;background:#25d366;color:#fff;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 10px 25px rgba(37,211,102,.5);z-index:100;animation:pulsa 2s infinite}
+@keyframes pulsa{50%{transform:scale(1.1)}}
+.aparece{opacity:0;transform:translateY(40px);transition:1s}
+.aparece.ativo{opacity:1;transform:none}
+@media(max-width:850px){.hero-box{grid-template-columns:1fr}.hero h1{font-size:2.3rem}nav ul{display:none}.numeros{gap:24px}}
+</style>
+</head>
+<body>
+<header><nav>
+<div class="logo">Clínica <span>Vitalis</span></div>
+<ul><li><a href="#servicos">Especialidades</a></li><li><a href="#equipe">Equipe</a></li><li><a href="#depoimentos">Depoimentos</a></li><li><a href="#contato">Contato</a></li></ul>
+</nav></header>
+
+<section class="hero"><div class="hero-box">
+<div>
+<span class="tag">✨ Atendimento humanizado</span>
+<h1>Sua saúde merece <span>cuidado de verdade</span></h1>
+<p>Especialistas dedicados, estrutura moderna e atendimento sem espera. Agende sua consulta em poucos cliques.</p>
+<!-- TROQUE o número do WhatsApp (5511999999999) em todos os links desta página -->
+<a class="btn" href="https://wa.me/5511999999999" target="_blank">Agendar consulta</a>
+<div class="numeros"><div><b>15+</b>anos</div><div><b>20 mil</b>pacientes</div><div><b>4.9★</b>avaliação</div></div>
+</div>
+<img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=900" alt="Médica atendendo paciente">
+</div></section>
+
+<section id="servicos">
+<div class="titulo aparece"><span class="tag">Especialidades</span><h2>Cuidamos de você por completo</h2></div>
+<div class="grid">
+<div class="card aparece"><div class="icone">❤️</div><h3>Cardiologia</h3><p>Check-ups e exames para manter seu coração forte.</p></div>
+<div class="card aparece"><div class="icone">🧠</div><h3>Neurologia</h3><p>Diagnóstico preciso e acompanhamento próximo.</p></div>
+<div class="card aparece"><div class="icone">👶</div><h3>Pediatria</h3><p>Carinho e atenção para os pequenos da família.</p></div>
+<div class="card aparece"><div class="icone">🦴</div><h3>Ortopedia</h3><p>Tratamento para dores, lesões e mobilidade.</p></div>
+</div></section>
+
+<section id="equipe" class="equipe">
+<div class="titulo aparece"><span class="tag">Nossa equipe</span><h2>Profissionais que inspiram confiança</h2></div>
+<div class="grid">
+<div class="card medico aparece"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600" alt="Médica"><div><h3>Dra. Ana Lima</h3><small>Cardiologista</small></div></div>
+<div class="card medico aparece"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600" alt="Médico"><div><h3>Dr. Rafael Souza</h3><small>Ortopedista</small></div></div>
+<div class="card medico aparece"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600" alt="Médica"><div><h3>Dra. Júlia Mendes</h3><small>Pediatra</small></div></div>
+</div></section>
+
+<section id="depoimentos">
+<div class="titulo aparece"><span class="tag">Depoimentos</span><h2>Quem cuida com a gente, recomenda</h2></div>
+<div class="grid">
+<div class="card depo aparece">"Fui atendida no horário e a médica explicou tudo com muita paciência."<b>— Mariana C.</b></div>
+<div class="card depo aparece">"Estrutura impecável. Meu filho adora a pediatra!"<b>— Carlos R.</b></div>
+<div class="card depo aparece">"Agendei pelo WhatsApp em 2 minutos. Muito prático."<b>— Fernanda L.</b></div>
+</div></section>
+
+<div id="contato" class="cta aparece">
+<h2>Pronto para cuidar da sua saúde?</h2>
+<p>📍 Av. Paulista, 1000 – São Paulo &nbsp;|&nbsp; 🕒 Seg a Sex, 7h às 20h</p>
+<a class="btn" href="https://wa.me/5511999999999" target="_blank">Falar no WhatsApp</a>
+</div>
+
+<footer>© 2026 Clínica Vitalis · Site demonstrativo — projeto de portfólio de Victor</footer>
+<a class="whats" href="https://wa.me/5511999999999" target="_blank">💬</a>
+
+<script>
+// Faz os elementos com a classe "aparece" surgirem suavemente ao rolar a página
+const obs=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('ativo')}),{threshold:.15});
+document.querySelectorAll('.aparece').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

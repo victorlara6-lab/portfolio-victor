@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO: título, descrição e prévia ao compartilhar no WhatsApp/redes ===== -->
+  <title>Clínica Vitalis | Cuidado médico humanizado em São Paulo</title>
+  <meta name="description" content="Clínica Vitalis: cardiologia, neurologia, pediatria, ortopedia, dermatologia e ginecologia. Agende sua consulta online ou pelo WhatsApp.">
+  <meta name="theme-color" content="#0E3B4A">
+  <meta property="og:title" content="Clínica Vitalis | Cuidado que transforma">
+  <meta property="og:description" content="Especialistas dedicados, estrutura moderna e agendamento online em poucos cliques.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1200&q=70">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- ===== Fontes (Google Fonts) — "preconnect" acelera o carregamento ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===== Estilos (CSS separado em assets/css) ===== -->
+  <link rel="stylesheet" href="assets/css/style.css?v=3">
+
+  <!-- Roda ANTES de desenhar a página, para não "piscar":
+       1) marca que o JavaScript está ativo (as animações de entrada dependem disso)
+       2) aplica o tema salvo (claro/escuro) ou o tema do sistema do usuário -->
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      const t = localStorage.getItem('vitalis-tema');
+      if (t) document.documentElement.dataset.theme = t;
+      else if (matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.dataset.theme = 'dark';
+    } catch (e) {}
+  </script>
+</head>
+<body>
+
+<!-- ======================================================================
+     ÍCONES SVG (sprite) — desenhados uma vez e reutilizados com <use href="#i-nome">
+     Assim a página fica leve e não depende de bibliotecas de ícones.
+     ====================================================================== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-coracao" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/><path d="M3.5 12h4l1.5-3 3 6 1.5-3h7"/></symbol>
+  <symbol id="i-cerebro" viewBox="0 0 24 24"><path d="M9.5 3A2.5 2.5 0 0 0 7 5.5v.1A3 3 0 0 0 4.6 10a3 3 0 0 0 .4 5A3 3 0 0 0 9 19.5a2.5 2.5 0 0 0 3-2.4V5.5A2.5 2.5 0 0 0 9.5 3z"/><path d="M14.5 3A2.5 2.5 0 0 1 17 5.5v.1a3 3 0 0 1 2.4 4.4 3 3 0 0 1-.4 5 3 3 0 0 1-4 4.5 2.5 2.5 0 0 1-3-2.4"/></symbol>
+  <symbol id="i-bebe" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M9 15.5s1.2 1.5 3 1.5 3-1.5 3-1.5"/><path d="M9.5 11.5h.01M14.5 11.5h.01"/><path d="M12 5c0-1.5 1-2.5 2.5-2.5"/></symbol>
+  <symbol id="i-osso" viewBox="0 0 24 24"><path d="M17 10l-7 7a2.5 2.5 0 1 1-3.5 2.5A2.5 2.5 0 1 1 4 16.5L4 16.5a2.5 2.5 0 1 1 3-3.5l7-7a2.5 2.5 0 1 1 3.5-2.5A2.5 2.5 0 1 1 20 7.5a2.5 2.5 0 1 1-3 2.5z"/></symbol>
+  <symbol id="i-gota" viewBox="0 0 24 24"><path d="M12 2.7l5.7 5.7a8 8 0 1 1-11.4 0z"/><path d="M9 14a3 3 0 0 0 3 3"/></symbol>
+  <symbol id="i-flor" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M12 14v8M9 19h6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M3 20l1.4-4.2A8.5 8.5 0 1 1 7.8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></symbol>
+  <symbol id="i-telefone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-local" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-email" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></symbol>
+  <symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-esquerda" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+  <symbol id="i-direita" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol>
+  <symbol id="i-cima" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></symbol>
+  <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-lua" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-usuarios" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="i-raio" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></symbol>
+  <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.2-6.2 3.2L7 14.2 2 9.3l6.9-1z"/></symbol>
+  <symbol id="i-aspas" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5H3v7h4c0 4-2 6-4 6zM14 21c3 0 7-1 7-8V5h-7v7h4c0 4-2 6-4 6z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+</svg>
+
+<!-- Link "pular para o conteúdo": ajuda quem navega pelo teclado (acessibilidade) -->
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ======================================================================
+     CABEÇALHO + MENU
+     ====================================================================== -->
+<header class="topo" id="topo">
+  <div class="container topo__barra">
+    <a href="#inicio" class="logo" aria-label="Clínica Vitalis — página inicial">
+      <img src="assets/img/logo.svg" alt="" width="40" height="40">
+      <span>Clínica <strong>Vitalis</strong></span>
+    </a>
+
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="#especialidades">Especialidades</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#duvidas">Dúvidas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="#agendar" class="btn btn--primario menu__cta">Agendar consulta</a>
+    </nav>
+
+    <div class="topo__acoes">
+      <!-- Botão de tema claro/escuro -->
+      <button class="icone-btn" id="btn-tema" type="button" aria-label="Alternar tema claro/escuro">
+        <svg class="ic tema-sol"><use href="#i-sol"/></svg>
+        <svg class="ic tema-lua"><use href="#i-lua"/></svg>
+      </button>
+      <!-- Botão hambúrguer (só aparece no celular/tablet) -->
+      <button class="hamburguer" id="btn-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <!-- Barrinha de progresso da rolagem -->
+  <div class="progresso" id="progresso" aria-hidden="true"></div>
+</header>
+
+<main id="conteudo">
+
+<!-- ======================================================================
+     HERO (primeira dobra)
+     ====================================================================== -->
+<section class="hero" id="inicio">
+  <!-- Formas decorativas animadas no fundo -->
+  <div class="hero__bolha hero__bolha--1" aria-hidden="true"></div>
+  <div class="hero__bolha hero__bolha--2" aria-hidden="true"></div>
+
+  <div class="container hero__grid">
+    <div class="hero__texto">
+      <span class="selo revelar"><span class="ponto-vivo"></span> Agenda aberta esta semana</span>
+
+      <h1 class="revelar">
+        Sua saúde merece
+        <span class="rotador" aria-hidden="true">
+          <span class="rotador__palavra ativa">cuidado de verdade</span>
+          <span class="rotador__palavra">atenção sem pressa</span>
+          <span class="rotador__palavra">tecnologia de ponta</span>
+        </span>
+        <span class="sr-only">cuidado de verdade</span>
+      </h1>
+
+      <p class="hero__lead revelar">
+        Especialistas dedicados, estrutura moderna e atendimento no horário.
+        Agende sua consulta online em menos de 1 minuto.
+      </p>
+
+      <div class="hero__botoes revelar">
+        <a href="#agendar" class="btn btn--primario btn--grande">
+          <svg class="ic"><use href="#i-calendario"/></svg> Agendar consulta
+        </a>
+        <!-- O número do WhatsApp é trocado em assets/js/main.js (CONFIG.whatsapp) -->
+        <a href="https://wa.me/5511999999999" data-whats class="btn btn--contorno btn--grande" target="_blank" rel="noopener">
+          <svg class="ic"><use href="#i-chat"/></svg> Falar no WhatsApp
+        </a>
+      </div>
+
+      <!-- Números animados (contam de 0 até o valor de data-alvo) -->
+      <dl class="numeros revelar">
+        <div><dt class="sr-only">Anos de experiência</dt><dd><b data-contador data-alvo="15" data-sufixo="+">0</b><span>anos de história</span></dd></div>
+        <div><dt class="sr-only">Pacientes atendidos</dt><dd><b data-contador data-alvo="20" data-sufixo=" mil">0</b><span>pacientes atendidos</span></dd></div>
+        <div><dt class="sr-only">Avaliação média</dt><dd><b data-contador data-alvo="4.9" data-decimais="1" data-sufixo="★">0</b><span>nota dos pacientes</span></dd></div>
+      </dl>
+    </div>
+
+    <div class="hero__visual revelar revelar--direita">
+      <div class="hero__foto">
+        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=760&q=70&auto=format&fit=crop"
+             srcset="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=480&q=70&auto=format&fit=crop 480w,
+                     https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=760&q=70&auto=format&fit=crop 760w,
+                     https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1000&q=70&auto=format&fit=crop 1000w"
+             sizes="(max-width: 900px) 92vw, 46vw"
+             width="760" height="760" alt="Médica conversando com paciente em consultório" fetchpriority="high">
+      </div>
+      <!-- Cartões flutuantes -->
+      <div class="flutuante flutuante--1">
+        <span class="flutuante__icone"><svg class="ic"><use href="#i-calendario"/></svg></span>
+        <div><small>Próximo horário</small><strong id="proximo-horario">Hoje, 14:30</strong></div>
+      </div>
+      <div class="flutuante flutuante--2">
+        <span class="estrelas" aria-hidden="true">★★★★★</span>
+        <div><strong>4,9 de 5</strong><small>+1.200 avaliações</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     FAIXA DE CONVÊNIOS (nomes fictícios) — rola sozinha
+     ====================================================================== -->
+<section class="convenios" aria-label="Convênios aceitos">
+  <p class="convenios__titulo">Aceitamos particular e os principais convênios</p>
+  <div class="letreiro">
+    <ul class="letreiro__trilho">
+      <li>Aurora Saúde</li><li>VidaPlena</li><li>Cuidar+</li><li>Horizonte Med</li>
+      <li>Proteção Familiar</li><li>Equilíbrio Saúde</li><li>Particular</li>
+      <!-- Lista repetida (escondida de leitores de tela) para o efeito de rolagem infinita -->
+      <li aria-hidden="true">Aurora Saúde</li><li aria-hidden="true">VidaPlena</li><li aria-hidden="true">Cuidar+</li><li aria-hidden="true">Horizonte Med</li>
+      <li aria-hidden="true">Proteção Familiar</li><li aria-hidden="true">Equilíbrio Saúde</li><li aria-hidden="true">Particular</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================================================================
+     ESPECIALIDADES — cada card abre um modal com detalhes ("Saiba mais")
+     O conteúdo do modal fica dentro de .card__detalhes (escondido)
+     ====================================================================== -->
+<section class="secao" id="especialidades">
+  <div class="container">
+    <header class="titulo revelar">
+      <span class="selo">Especialidades</span>
+      <h2>Cuidamos de você <em>por completo</em></h2>
+      <p>Seis especialidades no mesmo endereço, com exames e retorno integrados.</p>
+    </header>
+
+    <div class="grade grade--3">
+      <article class="card especialidade revelar" data-especialidade="Cardiologia">
+        <span class="especialidade__icone"><svg class="ic"><use href="#i-coracao"/></svg></span>
+        <h3>Cardiologia</h3>
+        <p>Check-ups, eletrocardiograma e acompanhamento para manter seu coração forte.</p>
+        <button class="link-seta" type="button" data-abrir-detalhes>Saiba mais <svg class="ic"><use href="#i-seta"/></svg></button>
+        <div class="card__detalhes" hidden>
+          <p>Prevenção e tratamento de hipertensão, arritmias, colesterol alto e insuficiência cardíaca.</p>
+          <ul class="lista-check"><li>Eletrocardiograma no local</li><li>Teste ergométrico</li><li>Holter 24h e MAPA</li><li>Avaliação pré-operatória</li></ul>
+        </div>
+      </article>
+
+      <article class="card especialidade revelar" data-especialidade="Neurologia">
+        <span class="especialidade__icone"><svg class="ic"><use href="#i-cerebro"/></svg></span>
+        <h3>Neurologia</h3>
+        <p>Diagnóstico preciso de dores de cabeça, tonturas e distúrbios do sono.</p>
+        <button class="link-seta" type="button" data-abrir-detalhes>Saiba mais <svg class="ic"><use href="#i-seta"/></svg></button>
+        <div class="card__detalhes" hidden>
+          <p>Atendimento para enxaqueca, epilepsia, alterações de memória, AVC e neuropatias.</p>
+          <ul class="lista-check"><li>Eletroencefalograma</li><li>Avaliação cognitiva</li><li>Tratamento de enxaqueca crônica</li><li>Acompanhamento pós-AVC</li></ul>
+        </div>
+      </article>
+
+      <article class="card especialidade revelar" data-especialidade="Pediatria">
+        <span class="especialidade__icone"><svg class="ic"><use href="#i-bebe"/></svg></span>
+        <h3>Pediatria</h3>
+        <p>Carinho e atenção para os pequenos, do recém-nascido ao adolescente.</p>
+        <button class="link-seta" type="button" data-abrir-detalhes>Saiba mais <svg class="ic"><use href="#i-seta"/></svg></button>
+        <div class="card__detalhes" hidden>
+          <p>Consultório pensado para crianças, com brinquedoteca e equipe treinada para acolher a família.</p>
+          <ul class="lista-check"><li>Puericultura (acompanhamento do crescimento)</li><li>Orientação de vacinas</li><li>Teste do pezinho e da orelhinha</li><li>Consultas de rotina e urgência leve</li></ul>
+        </div>
+      </article>
+
+      <article class="card especialidade revelar" data-especialidade="Ortopedia">
+        <span class="especialidade__icone"><svg class="ic"><use href="#i-osso"/></svg></span>
+        <h3>Ortopedia</h3>
+        <p>Tratamento de dores, lesões esportivas e problemas de coluna.</p>
+        <button class="link-seta" type="button" data-abrir-detalhes>Saiba mais <svg class="ic"><use href="#i-seta"/></svg></button>
+        <div class="card__detalhes" hidden>
+          <p>Cuidado para coluna, joelho, ombro e quadril, com plano de tratamento e encaminhamento para fisioterapia.</p>
+          <ul class="lista-check"><li>Lesões esportivas</li><li>Dor lombar e cervical</li><li>Infiltrações guiadas</li><li>Imobilizações</li></ul>
+        </div>
+      </article>
+
+      <article class="card especialidade revelar" data-especialidade="Dermatologia">
+        <span class="especialidade__icone"><svg class="ic"><use href="#i-gota"/></svg></span>
+        <h3>Dermatologia</h3>
+        <p>Saúde da pele, cabelos e unhas, com foco em prevenção.</p>
+        <button class="link-seta" type="button" data-abrir-detalhes>Saiba mais <svg class="ic"><use href="#i-seta"/></svg></button>
+        <div class="card__detalhes" hidden>
+          <p>Diagnóstico e tratamento de acne, manchas, queda de cabelo e prevenção do câncer de pele.</p>
+          <ul class="lista-check"><li>Mapeamento de pintas</li><li>Dermatoscopia digital</li><li>Tratamento de acne</li><li>Biópsia de pele</li></ul>
+        </div>
+      </article>
+
+      <article class="card especialidade revelar" data-especialidade="Ginecologia">
+        <span class="especialidade__icone"><svg class="ic"><use href="#i-flor"/></svg></span>
+        <h3>Ginecologia</h3>
+        <p>Acompanhamento da saúde da mulher em todas as fases da vida.</p>
+        <button class="link-seta" type="button" data-abrir-detalhes>Saiba mais <svg class="ic"><use href="#i-seta"/></svg></button>
+        <div class="card__detalhes" hidden>
+          <p>Consultas preventivas, planejamento familiar, pré-natal e climatério com escuta acolhedora.</p>
+          <ul class="lista-check"><li>Papanicolau</li><li>Pré-natal</li><li>Planejamento familiar</li><li>Acompanhamento na menopausa</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     SOBRE / DIFERENCIAIS
+     ====================================================================== -->
+<section class="secao secao--alt" id="sobre">
+  <div class="container sobre">
+    <div class="sobre__foto revelar revelar--esquerda">
+      <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=760&q=70&auto=format&fit=crop"
+           srcset="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=480&q=70&auto=format&fit=crop 480w,
+                   https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=760&q=70&auto=format&fit=crop 760w"
+           sizes="(max-width: 900px) 92vw, 45vw"
+           width="760" height="560" loading="lazy" alt="Recepção moderna e iluminada da clínica">
+      <div class="sobre__selo">
+        <b>98%</b>
+        <span>dos pacientes recomendam a Vitalis</span>
+      </div>
+    </div>
+
+    <div class="sobre__texto">
+      <header class="titulo titulo--esquerda revelar">
+        <span class="selo">Por que a Vitalis</span>
+        <h2>Medicina de qualidade, <em>sem fila e sem pressa</em></h2>
+        <p>Há 15 anos unimos tecnologia e acolhimento. Aqui você é chamado pelo nome, atendido no horário e sai com todas as dúvidas respondidas.</p>
+      </header>
+
+      <ul class="diferenciais">
+        <li class="revelar">
+          <span class="diferenciais__icone"><svg class="ic"><use href="#i-relogio"/></svg></span>
+          <div><h3>Pontualidade</h3><p>Tempo médio de espera de 8 minutos.</p></div>
+        </li>
+        <li class="revelar">
+          <span class="diferenciais__icone"><svg class="ic"><use href="#i-raio"/></svg></span>
+          <div><h3>Exames no mesmo dia</h3><p>Laboratório e imagem no próprio prédio.</p></div>
+        </li>
+        <li class="revelar">
+          <span class="diferenciais__icone"><svg class="ic"><use href="#i-escudo"/></svg></span>
+          <div><h3>Prontuário digital</h3><p>Seus dados protegidos, conforme a LGPD.</p></div>
+        </li>
+        <li class="revelar">
+          <span class="diferenciais__icone"><svg class="ic"><use href="#i-usuarios"/></svg></span>
+          <div><h3>Equipe integrada</h3><p>Especialistas que conversam entre si sobre o seu caso.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Como funciona: 3 passos -->
+  <div class="container passos">
+    <h3 class="passos__titulo revelar">Como funciona</h3>
+    <ol class="passos__lista">
+      <li class="revelar"><span class="passos__num">1</span><h4>Escolha a especialidade</h4><p>Selecione o médico e o melhor dia para você.</p></li>
+      <li class="revelar"><span class="passos__num">2</span><h4>Confirme em 1 minuto</h4><p>Receba a confirmação no WhatsApp na hora.</p></li>
+      <li class="revelar"><span class="passos__num">3</span><h4>Seja atendido no horário</h4><p>Chegue, faça o check-in e pronto.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================================================================
+     EQUIPE — filtros por especialidade + botão "Agendar com..."
+     data-id precisa ser igual ao id em dados/clinica.json (usado pelo Python)
+     ====================================================================== -->
+<section class="secao" id="equipe">
+  <div class="container">
+    <header class="titulo revelar">
+      <span class="selo">Nossa equipe</span>
+      <h2>Profissionais que <em>inspiram confiança</em></h2>
+      <p>Médicos com residência nas melhores instituições do país.</p>
+    </header>
+
+    <!-- Os botões de filtro são criados pelo JavaScript a partir dos cards -->
+    <div class="filtros revelar" id="filtros-equipe" role="group" aria-label="Filtrar equipe por especialidade"></div>
+
+    <div class="grade grade--3" id="lista-equipe">
+      <article class="card medico revelar" data-id="ana-lima" data-nome="Dra. Ana Lima" data-especialidade="Cardiologia">
+        <div class="medico__foto"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=70&auto=format&fit=crop&crop=faces" width="500" height="560" loading="lazy" alt="Dra. Ana Lima, cardiologista"></div>
+        <div class="medico__info"><h3>Dra. Ana Lima</h3><p>Cardiologista · CRM-SP 000001</p>
+          <button class="btn btn--suave btn--pequeno" type="button" data-agendar-medico>Agendar com a Dra. Ana</button></div>
+      </article>
+
+      <article class="card medico revelar" data-id="lucas-andrade" data-nome="Dr. Lucas Andrade" data-especialidade="Neurologia">
+        <div class="medico__foto"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&q=70&auto=format&fit=crop&crop=faces" width="500" height="560" loading="lazy" alt="Dr. Lucas Andrade, neurologista"></div>
+        <div class="medico__info"><h3>Dr. Lucas Andrade</h3><p>Neurologista · CRM-SP 000002</p>
+          <button class="btn btn--suave btn--pequeno" type="button" data-agendar-medico>Agendar com o Dr. Lucas</button></div>
+      </article>
+
+      <article class="card medico revelar" data-id="julia-mendes" data-nome="Dra. Júlia Mendes" data-especialidade="Pediatria">
+        <div class="medico__foto"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&q=70&auto=format&fit=crop&crop=faces" width="500" height="560" loading="lazy" alt="Dra. Júlia Mendes, pediatra"></div>
+        <div class="medico__info"><h3>Dra. Júlia Mendes</h3><p>Pediatra · CRM-SP 000003</p>
+          <button class="btn btn--suave btn--pequeno" type="button" data-agendar-medico>Agendar com a Dra. Júlia</button></div>
+      </article>
+
+      <article class="card medico revelar" data-id="rafael-souza" data-nome="Dr. Rafael Souza" data-especialidade="Ortopedia">
+        <div class="medico__foto"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=70&auto=format&fit=crop&crop=faces" width="500" height="560" loading="lazy" alt="Dr. Rafael Souza, ortopedista"></div>
+        <div class="medico__info"><h3>Dr. Rafael Souza</h3><p>Ortopedista · CRM-SP 000004</p>
+          <button class="btn btn--suave btn--pequeno" type="button" data-agendar-medico>Agendar com o Dr. Rafael</button></div>
+      </article>
+
+      <article class="card medico revelar" data-id="beatriz-nogueira" data-nome="Dra. Beatriz Nogueira" data-especialidade="Dermatologia">
+        <div class="medico__foto"><img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=500&q=70&auto=format&fit=crop&crop=faces" width="500" height="560" loading="lazy" alt="Dra. Beatriz Nogueira, dermatologista"></div>
+        <div class="medico__info"><h3>Dra. Beatriz Nogueira</h3><p>Dermatologista · CRM-SP 000005</p>
+          <button class="btn btn--suave btn--pequeno" type="button" data-agendar-medico>Agendar com a Dra. Beatriz</button></div>
+      </article>
+
+      <article class="card medico revelar" data-id="marcos-teixeira" data-nome="Dr. Marcos Teixeira" data-especialidade="Ginecologia">
+        <div class="medico__foto"><img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&q=70&auto=format&fit=crop&crop=faces" width="500" height="560" loading="lazy" alt="Dr. Marcos Teixeira, ginecologista"></div>
+        <div class="medico__info"><h3>Dr. Marcos Teixeira</h3><p>Ginecologista · CRM-SP 000006</p>
+          <button class="btn btn--suave btn--pequeno" type="button" data-agendar-medico>Agendar com o Dr. Marcos</button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     DEPOIMENTOS — carrossel (setas, bolinhas, arrastar no celular, autoplay)
+     ====================================================================== -->
+<section class="secao secao--escura" id="depoimentos">
+  <div class="container">
+    <header class="titulo revelar">
+      <span class="selo selo--claro">Depoimentos</span>
+      <h2>Quem cuida com a gente, <em>recomenda</em></h2>
+    </header>
+
+    <div class="carrossel revelar" id="carrossel" aria-roledescription="carrossel" aria-label="Depoimentos de pacientes">
+      <div class="carrossel__janela">
+        <ul class="carrossel__trilho">
+          <li class="depo"><svg class="ic depo__aspas"><use href="#i-aspas"/></svg><p>Fui atendida no horário e a médica explicou tudo com muita paciência. Saí da consulta tranquila.</p><footer><span class="depo__avatar">MC</span><div><b>Mariana C.</b><small>Cardiologia</small></div><span class="estrelas" aria-label="5 estrelas">★★★★★</span></footer></li>
+          <li class="depo"><svg class="ic depo__aspas"><use href="#i-aspas"/></svg><p>Estrutura impecável. Meu filho adora a pediatra e já pede para voltar!</p><footer><span class="depo__avatar">CR</span><div><b>Carlos R.</b><small>Pediatria</small></div><span class="estrelas" aria-label="5 estrelas">★★★★★</span></footer></li>
+          <li class="depo"><svg class="ic depo__aspas"><use href="#i-aspas"/></svg><p>Agendei pelo site em 1 minuto e recebi a confirmação no WhatsApp. Muito prático.</p><footer><span class="depo__avatar">FL</span><div><b>Fernanda L.</b><small>Dermatologia</small></div><span class="estrelas" aria-label="5 estrelas">★★★★★</span></footer></li>
+          <li class="depo"><svg class="ic depo__aspas"><use href="#i-aspas"/></svg><p>Fiz o exame e a consulta no mesmo dia. Economizei uma semana de espera.</p><footer><span class="depo__avatar">RT</span><div><b>Roberto T.</b><small>Ortopedia</small></div><span class="estrelas" aria-label="5 estrelas">★★★★★</span></footer></li>
+          <li class="depo"><svg class="ic depo__aspas"><use href="#i-aspas"/></svg><p>Depois de anos com enxaqueca, finalmente encontrei um tratamento que funciona.</p><footer><span class="depo__avatar">PA</span><div><b>Patrícia A.</b><small>Neurologia</small></div><span class="estrelas" aria-label="5 estrelas">★★★★★</span></footer></li>
+          <li class="depo"><svg class="ic depo__aspas"><use href="#i-aspas"/></svg><p>Atendimento acolhedor do começo ao fim, da recepção à médica. Recomendo demais.</p><footer><span class="depo__avatar">JS</span><div><b>Juliana S.</b><small>Ginecologia</small></div><span class="estrelas" aria-label="5 estrelas">★★★★★</span></footer></li>
+        </ul>
+      </div>
+      <div class="carrossel__controles">
+        <button class="icone-btn icone-btn--claro" type="button" data-carrossel="anterior" aria-label="Depoimento anterior"><svg class="ic"><use href="#i-esquerda"/></svg></button>
+        <div class="carrossel__pontos" role="group" aria-label="Escolher depoimento"></div>
+        <button class="icone-btn icone-btn--claro" type="button" data-carrossel="proximo" aria-label="Próximo depoimento"><svg class="ic"><use href="#i-direita"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     AGENDAMENTO — formulário completo (lógica em assets/js/agendamento.js)
+     Se o servidor Python estiver rodando, salva no banco SQLite.
+     Se não (ex.: GitHub Pages), envia a solicitação pelo WhatsApp.
+     ====================================================================== -->
+<section class="secao secao--alt" id="agendar">
+  <div class="container agendar">
+    <div class="agendar__info revelar revelar--esquerda">
+      <header class="titulo titulo--esquerda">
+        <span class="selo">Agendamento online</span>
+        <h2>Marque sua consulta <em>agora mesmo</em></h2>
+        <p>Escolha a especialidade, o dia e o horário. A confirmação chega no seu WhatsApp.</p>
+      </header>
+      <ul class="lista-check lista-check--grande">
+        <li>Sem cadastro e sem senha</li>
+        <li>Horários de segunda a sábado</li>
+        <li>Reagendamento gratuito com 24h de antecedência</li>
+      </ul>
+      <p class="agendar__status" id="status-servidor" hidden></p>
+    </div>
+
+    <form class="formulario card revelar revelar--direita" id="form-agendamento" novalidate>
+      <div class="campo">
+        <label for="f-nome">Nome completo</label>
+        <input id="f-nome" name="nome" type="text" autocomplete="name" required minlength="3" placeholder="Como devemos te chamar?">
+        <small class="campo__erro" aria-live="polite"></small>
+      </div>
+
+      <div class="campo-duplo">
+        <div class="campo">
+          <label for="f-telefone">WhatsApp</label>
+          <input id="f-telefone" name="telefone" type="tel" inputmode="numeric" autocomplete="tel" required placeholder="(11) 99999-9999">
+          <small class="campo__erro" aria-live="polite"></small>
+        </div>
+        <div class="campo">
+          <label for="f-email">E-mail <span class="opcional">(opcional)</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="voce@email.com">
+          <small class="campo__erro" aria-live="polite"></small>
+        </div>
+      </div>
+
+      <div class="campo-duplo">
+        <div class="campo">
+          <label for="f-especialidade">Especialidade</label>
+          <select id="f-especialidade" name="especialidade" required>
+            <option value="">Selecione…</option>
+          </select>
+          <small class="campo__erro" aria-live="polite"></small>
+        </div>
+        <div class="campo">
+          <label for="f-medico">Médico(a)</label>
+          <select id="f-medico" name="medico">
+            <option value="">Sem preferência</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="f-data">Data</label>
+        <input id="f-data" name="data" type="date" required>
+        <small class="campo__erro" aria-live="polite"></small>
+      </div>
+
+      <fieldset class="campo horarios">
+        <legend>Horário</legend>
+        <div class="horarios__grade" id="horarios">
+          <p class="horarios__vazio">Escolha uma data para ver os horários.</p>
+        </div>
+        <small class="campo__erro" aria-live="polite"></small>
+      </fieldset>
+
+      <div class="campo">
+        <label for="f-obs">Observações <span class="opcional">(opcional)</span></label>
+        <textarea id="f-obs" name="observacoes" rows="3" maxlength="400" placeholder="Convênio, sintomas, preferências…"></textarea>
+      </div>
+
+      <label class="aceite">
+        <input type="checkbox" name="aceite" required>
+        <span>Concordo em ser contatado(a) pela clínica para confirmar a consulta (LGPD).</span>
+      </label>
+      <small class="campo__erro campo__erro--aceite" aria-live="polite"></small>
+
+      <button class="btn btn--primario btn--grande btn--bloco" type="submit" id="btn-enviar">
+        <span class="btn__texto">Confirmar agendamento</span>
+        <span class="btn__carregando" aria-hidden="true"></span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ======================================================================
+     DÚVIDAS FREQUENTES — acordeão (<details> nativo + animação)
+     ====================================================================== -->
+<section class="secao" id="duvidas">
+  <div class="container container--estreito">
+    <header class="titulo revelar">
+      <span class="selo">Dúvidas frequentes</span>
+      <h2>Ficou com <em>alguma dúvida?</em></h2>
+    </header>
+
+    <div class="acordeao">
+      <details class="revelar" open>
+        <summary>Quais convênios vocês aceitam?</summary>
+        <div class="acordeao__resposta"><p>Atendemos Aurora Saúde, VidaPlena, Cuidar+, Horizonte Med, Proteção Familiar, Equilíbrio Saúde e particular. Na dúvida, chame no WhatsApp com a foto da carteirinha.</p></div>
+      </details>
+      <details class="revelar">
+        <summary>Quanto custa a consulta particular?</summary>
+        <div class="acordeao__resposta"><p>Os valores variam por especialidade e começam em R$ 250. Oferecemos parcelamento no cartão e desconto para pagamento via Pix.</p></div>
+      </details>
+      <details class="revelar">
+        <summary>Posso remarcar ou cancelar?</summary>
+        <div class="acordeao__resposta"><p>Sim, sem custo, com até 24 horas de antecedência. Basta responder a mensagem de confirmação no WhatsApp.</p></div>
+      </details>
+      <details class="revelar">
+        <summary>Vocês fazem exames no local?</summary>
+        <div class="acordeao__resposta"><p>Sim. Temos laboratório de análises clínicas, eletrocardiograma, ultrassom e raio-X no mesmo prédio, muitos com resultado no mesmo dia.</p></div>
+      </details>
+      <details class="revelar">
+        <summary>Tem estacionamento?</summary>
+        <div class="acordeao__resposta"><p>Sim, estacionamento conveniado com 1 hora gratuita para pacientes. Também ficamos a 3 minutos a pé do metrô.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CONTATO + MAPA
+     ====================================================================== -->
+<section class="secao secao--alt" id="contato">
+  <div class="container contato">
+    <div class="contato__info revelar revelar--esquerda">
+      <header class="titulo titulo--esquerda">
+        <span class="selo">Onde estamos</span>
+        <h2>Venha nos <em>visitar</em></h2>
+      </header>
+
+      <ul class="contato__lista">
+        <li><span class="diferenciais__icone"><svg class="ic"><use href="#i-local"/></svg></span>
+          <div><h3>Endereço</h3><p>Av. Paulista, 1000 – Bela Vista, São Paulo – SP</p></div></li>
+        <li><span class="diferenciais__icone"><svg class="ic"><use href="#i-relogio"/></svg></span>
+          <div><h3>Horário <span class="status-aberto" id="status-aberto"></span></h3><p>Seg a Sex: 8h às 18h · Sáb: 8h às 12h</p></div></li>
+        <li><span class="diferenciais__icone"><svg class="ic"><use href="#i-telefone"/></svg></span>
+          <div><h3>Telefone</h3><p><a href="tel:+551130000000">(11) 3000-0000</a></p></div></li>
+        <li><span class="diferenciais__icone"><svg class="ic"><use href="#i-email"/></svg></span>
+          <div><h3>E-mail</h3><p><a href="mailto:contato@clinicavitalis.exemplo">contato@clinicavitalis.exemplo</a></p></div></li>
+      </ul>
+
+      <div class="contato__botoes">
+        <a class="btn btn--primario" href="https://www.google.com/maps/search/?api=1&query=Av.+Paulista,+1000,+S%C3%A3o+Paulo" target="_blank" rel="noopener">
+          <svg class="ic"><use href="#i-local"/></svg> Como chegar
+        </a>
+        <button class="btn btn--contorno" type="button" id="btn-copiar-endereco">Copiar endereço</button>
+      </div>
+    </div>
+
+    <div class="contato__mapa revelar revelar--direita">
+      <!-- Mapa do OpenStreetMap (gratuito, sem chave de API). loading="lazy" = só carrega quando aparece -->
+      <iframe title="Mapa com a localização da clínica"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-46.6610%2C-23.5700%2C-46.6450%2C-23.5600&amp;layer=mapnik&amp;marker=-23.5647%2C-46.6525"
+              loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Chamada final -->
+<section class="cta-final">
+  <div class="container cta-final__caixa revelar">
+    <h2>Pronto para cuidar da sua saúde?</h2>
+    <p>Agende agora e seja atendido ainda esta semana.</p>
+    <div class="hero__botoes">
+      <a href="#agendar" class="btn btn--branco btn--grande">Agendar consulta</a>
+      <a href="https://wa.me/5511999999999" data-whats class="btn btn--contorno-claro btn--grande" target="_blank" rel="noopener">
+        <svg class="ic"><use href="#i-chat"/></svg> WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================================================================
+     RODAPÉ — com o aviso de site demonstrativo (regra de honestidade)
+     ====================================================================== -->
+<footer class="rodape">
+  <div class="container rodape__grid">
+    <div>
+      <a href="#inicio" class="logo logo--claro"><img src="assets/img/logo.svg" alt="" width="36" height="36"><span>Clínica <strong>Vitalis</strong></span></a>
+      <p class="rodape__texto">Cuidado médico humanizado, com tecnologia e pontualidade.</p>
+    </div>
+    <nav aria-label="Links do rodapé">
+      <h3>Navegação</h3>
+      <ul><li><a href="#especialidades">Especialidades</a></li><li><a href="#equipe">Equipe</a></li><li><a href="#agendar">Agendar</a></li><li><a href="#duvidas">Dúvidas</a></li></ul>
+    </nav>
+    <div>
+      <h3>Atendimento</h3>
+      <ul><li>Seg a Sex: 8h às 18h</li><li>Sábado: 8h às 12h</li><li><a href="tel:+551130000000">(11) 3000-0000</a></li></ul>
+    </div>
+    <div>
+      <h3>Responsável técnico</h3>
+      <p class="rodape__texto">Dra. Ana Lima · CRM-SP 000001</p>
+    </div>
+  </div>
+  <div class="container rodape__base">
+    <p>© <span id="ano">2026</span> Clínica Vitalis (empresa fictícia).</p>
+    <p class="rodape__aviso">Site demonstrativo — projeto de portfólio de Victor</p>
+  </div>
+</footer>
+
+<!-- Botão flutuante do WhatsApp (pulsando) -->
+<a href="https://wa.me/5511999999999" data-whats class="whats" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg class="ic"><use href="#i-chat"/></svg>
+  <span class="whats__dica">Fale com a gente!</span>
+</a>
+
+<!-- Botão "voltar ao topo" -->
+<button class="voltar-topo" id="voltar-topo" type="button" aria-label="Voltar ao topo"><svg class="ic"><use href="#i-cima"/></svg></button>
+
+<!-- Modal reutilizável (detalhes de especialidade e confirmação de agendamento) -->
+<dialog class="modal" id="modal" aria-labelledby="modal-titulo">
+  <button class="modal__fechar icone-btn" type="button" data-fechar-modal aria-label="Fechar"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="modal__icone" id="modal-icone"></div>
+  <h2 id="modal-titulo">Título</h2>
+  <div class="modal__corpo" id="modal-corpo"></div>
+  <div class="modal__acoes" id="modal-acoes"></div>
+</dialog>
+
+<!-- Avisos rápidos (toast) -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ===== Scripts (defer = carregam sem travar a página) ===== -->
+<script src="assets/js/main.js?v=2" defer></script>
+<script src="assets/js/agendamento.js?v=2" defer></script>
+</body>
+</html>

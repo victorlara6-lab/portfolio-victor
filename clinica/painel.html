@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel da Recepção | Clínica Vitalis</title>
+  <meta name="robots" content="noindex"> <!-- painel interno: não aparece no Google -->
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Reaproveita as cores e botões do site + estilos próprios do painel -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/painel.css">
+  <script>
+    try { const t = localStorage.getItem('vitalis-tema'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body class="painel">
+
+<header class="painel__topo">
+  <div class="container painel__barra">
+    <a href="index.html" class="logo"><img src="assets/img/logo.svg" alt="" width="36" height="36"><span>Clínica <strong>Vitalis</strong></span></a>
+    <span class="painel__etiqueta">Painel da recepção</span>
+    <a href="index.html" class="btn btn--contorno btn--pequeno">Ver site</a>
+  </div>
+</header>
+
+<main class="container painel__conteudo">
+
+  <!-- Aviso quando o servidor Python não está rodando -->
+  <section class="painel__offline card" id="offline" hidden>
+    <h1>O painel precisa do servidor Python 🐍</h1>
+    <p>Este painel lê os agendamentos do banco de dados. Para usar:</p>
+    <ol>
+      <li>Abra o terminal na pasta <code>clinica</code></li>
+      <li>Rode: <code>python backend-python/servidor.py</code></li>
+      <li>Acesse <code>http://localhost:8000/painel.html</code></li>
+    </ol>
+  </section>
+
+  <div id="area-painel" hidden>
+    <div class="painel__cabecalho">
+      <div>
+        <h1>Agendamentos</h1>
+        <p class="painel__sub">Atualizado às <span id="atualizado">--:--</span> · atualiza sozinho a cada 30s</p>
+      </div>
+      <div class="painel__acoes">
+        <button class="btn btn--contorno btn--pequeno" type="button" id="btn-atualizar">Atualizar</button>
+        <button class="btn btn--primario btn--pequeno" type="button" id="btn-csv">Exportar planilha (CSV)</button>
+      </div>
+    </div>
+
+    <!-- Cards de resumo -->
+    <section class="resumo" aria-label="Resumo">
+      <div class="resumo__card card"><span>Total</span><b id="r-total">0</b></div>
+      <div class="resumo__card card"><span>Hoje</span><b id="r-hoje">0</b></div>
+      <div class="resumo__card card resumo__card--pendente"><span>Pendentes</span><b id="r-pendentes">0</b></div>
+      <div class="resumo__card card resumo__card--confirmado"><span>Confirmados</span><b id="r-confirmados">0</b></div>
+      <div class="resumo__card card resumo__card--cancelado"><span>Cancelados</span><b id="r-cancelados">0</b></div>
+    </section>
+
+    <div class="painel__grade">
+      <!-- Gráfico de barras feito só com HTML + CSS -->
+      <section class="card grafico">
+        <h2>Mais procuradas</h2>
+        <ul class="grafico__lista" id="grafico"></ul>
+      </section>
+
+      <section class="card tabela-caixa">
+        <form class="filtros-painel" id="filtros">
+          <label>Data <input type="date" name="data"></label>
+          <label>Status
+            <select name="status">
+              <option value="">Todos</option>
+              <option value="pendente">Pendente</option>
+              <option value="confirmado">Confirmado</option>
+              <option value="concluido">Concluído</option>
+              <option value="cancelado">Cancelado</option>
+            </select>
+          </label>
+          <label class="filtros-painel__busca">Buscar paciente <input type="search" name="busca" placeholder="Nome ou telefone"></label>
+          <button type="reset" class="btn btn--suave btn--pequeno">Limpar</button>
+        </form>
+
+        <div class="tabela-rolagem">
+          <table class="tabela">
+            <thead>
+              <tr><th>Quando</th><th>Paciente</th><th>Especialidade / Médico</th><th>Status</th><th><span class="sr-only">Ações</span></th></tr>
+            </thead>
+            <tbody id="linhas"></tbody>
+          </table>
+        </div>
+        <p class="tabela__vazia" id="vazio" hidden>Nenhum agendamento encontrado. Faça um teste pelo <a href="index.html#agendar">formulário do site</a>.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="container painel__rodape">Site demonstrativo — projeto de portfólio de Victor</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/painel.js" defer></script>
+</body>
+</html>

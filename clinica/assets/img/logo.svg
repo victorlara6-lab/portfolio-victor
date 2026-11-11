@@ -1,0 +1,15 @@
+<!-- Logo da Clínica Vitalis (fictícia) — desenhado à mão em SVG, sem direitos autorais de terceiros -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Clínica Vitalis">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#19B39B"/>
+      <stop offset="1" stop-color="#0E3B4A"/>
+    </linearGradient>
+  </defs>
+  <!-- Fundo arredondado -->
+  <rect width="48" height="48" rx="14" fill="url(#g)"/>
+  <!-- Cruz médica suave -->
+  <path d="M20 11h8v9h9v8h-9v9h-8v-9h-9v-8h9z" fill="#fff" opacity=".18"/>
+  <!-- Linha de batimento (pulso) -->
+  <path d="M8 26h8l3-7 5 14 4-10 2 3h10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

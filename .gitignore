@@ -1,0 +1,9 @@
+# Arquivos que NÃO vão para o GitHub (o repositório é público)
+
+# Briefing pessoal do projeto e configurações do Claude Code
+CLAUDE.md
+.claude/
+
+# Banco de dados de teste e arquivos temporários do Python
+*.db
+__pycache__/

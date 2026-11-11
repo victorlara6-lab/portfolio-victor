@@ -1,0 +1,89 @@
+/* =========================================================================
+   CLÍNICA VITALIS — Estilos do painel da recepção (painel.html)
+   Usa as variáveis de cor definidas em style.css
+   ========================================================================= */
+
+.painel { background: var(--fundo-alt); min-height: 100vh; display: flex; flex-direction: column; }
+
+.painel__topo { background: var(--superficie); border-bottom: 1px solid var(--borda); padding: 14px 0; position: sticky; top: 0; z-index: 10; }
+.painel__barra { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.painel__barra .btn { margin-left: auto; }
+.painel__etiqueta { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; background: var(--menta-clara); color: var(--menta-texto); padding: .3em .8em; border-radius: 999px; }
+
+.painel__conteudo { padding: 32px 0 48px; flex: 1; }
+.painel__cabecalho { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; justify-content: space-between; margin-bottom: 24px; }
+.painel__cabecalho h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); }
+.painel__sub { color: var(--texto-suave); font-size: .9rem; }
+.painel__acoes { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.painel__offline { padding: 32px; max-width: 640px; margin: 40px auto; }
+.painel__offline h1 { font-size: 1.6rem; margin-bottom: 12px; }
+.painel__offline ol { margin: 14px 0 0 20px; list-style: decimal; display: grid; gap: 6px; }
+code { background: var(--fundo-alt); border: 1px solid var(--borda); padding: .1em .45em; border-radius: 6px; font-size: .9em; }
+
+/* Cards de resumo */
+.resumo { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+.resumo__card { padding: 16px 18px; border-left: 4px solid var(--menta); }
+.resumo__card span { display: block; color: var(--texto-suave); font-size: .82rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+.resumo__card b { font-family: var(--fonte-titulo); font-size: 2rem; color: var(--titulo); }
+.resumo__card--pendente { border-left-color: #F5A623; }
+.resumo__card--confirmado { border-left-color: var(--menta); }
+.resumo__card--cancelado { border-left-color: #E5484D; }
+
+.painel__grade { display: grid; gap: 20px; }
+
+/* Gráfico de barras */
+.grafico { padding: 22px; align-self: start; }
+.grafico h2 { font-size: 1.15rem; margin-bottom: 16px; }
+.grafico__lista { display: grid; gap: 12px; }
+.grafico__lista li { display: grid; gap: 4px; font-size: .9rem; }
+.grafico__rotulo { display: flex; justify-content: space-between; }
+.grafico__barra { height: 10px; border-radius: 999px; background: var(--fundo-alt); overflow: hidden; }
+.grafico__barra i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--menta), var(--petroleo-2)); width: 0; transition: width 1s cubic-bezier(.2,.8,.2,1); }
+
+/* Filtros e tabela */
+.tabela-caixa { padding: 18px; min-width: 0; }
+.filtros-painel { display: grid; gap: 10px; margin-bottom: 16px; align-items: end; }
+.filtros-painel label { display: grid; gap: 4px; font-size: .82rem; font-weight: 600; color: var(--texto-suave); }
+.filtros-painel input, .filtros-painel select { padding: 10px 12px; border-radius: 10px; border: 1.5px solid var(--borda); background: var(--fundo); font-size: 1rem; }
+
+.tabela-rolagem { overflow-x: auto; }
+.tabela { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.tabela th { text-align: left; font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--texto-suave); padding: 10px 12px; border-bottom: 2px solid var(--borda); white-space: nowrap; }
+.tabela td { padding: 12px; border-bottom: 1px solid var(--borda); vertical-align: top; }
+.tabela tr { animation: entrar .4s both; }
+.tabela tbody tr:hover { background: var(--fundo-alt); }
+.tabela small { display: block; color: var(--texto-suave); }
+.tabela__vazia { text-align: center; color: var(--texto-suave); padding: 30px 10px; }
+.tabela__vazia a { color: var(--menta-texto); font-weight: 600; }
+
+.etiqueta-status { display: inline-block; padding: .25em .75em; border-radius: 999px; font-size: .78rem; font-weight: 700; text-transform: capitalize; }
+.etiqueta-status--pendente { background: #FFF3DC; color: #9A5B00; }
+.etiqueta-status--confirmado { background: var(--menta-clara); color: var(--menta-texto); }
+.etiqueta-status--concluido { background: #E4ECFF; color: #2848A8; }
+.etiqueta-status--cancelado { background: #FFE4E5; color: #B4232A; }
+
+.acoes-linha { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.acao { padding: .4em .8em; border-radius: 8px; font-size: .8rem; font-weight: 600; border: 1px solid var(--borda); background: var(--superficie); transition: all .2s; white-space: nowrap; }
+.acao:hover { border-color: var(--menta); color: var(--menta-texto); }
+.acao--perigo:hover { border-color: #E5484D; color: #E5484D; }
+
+.painel__rodape { padding: 20px 0 28px; font-size: .82rem; color: var(--texto-suave); font-style: italic; text-align: center; }
+
+/* No celular, cada linha da tabela vira um "cartão" */
+@media (max-width: 759px) {
+  .tabela thead { display: none; }
+  .tabela, .tabela tbody, .tabela tr, .tabela td { display: block; width: 100%; }
+  .tabela tr { border: 1px solid var(--borda); border-radius: 14px; padding: 6px 4px; margin-bottom: 12px; }
+  .tabela td { border: 0; padding: 6px 12px; }
+  .acoes-linha { justify-content: flex-start; }
+}
+
+@media (min-width: 640px) {
+  .resumo { grid-template-columns: repeat(5, 1fr); }
+  .filtros-painel { grid-template-columns: 1fr 1fr 2fr auto; }
+}
+
+@media (min-width: 1024px) {
+  .painel__grade { grid-template-columns: 300px 1fr; }
+}

@@ -1,0 +1,3 @@
+# Banco de dados com agendamentos de teste: não sobe para o GitHub
+*.db
+__pycache__/
