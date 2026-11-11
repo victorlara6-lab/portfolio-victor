@@ -1,0 +1,9 @@
+<!-- Logo da Raiz & Barro (loja fictícia) — desenhado em SVG, sem direitos de terceiros -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Raiz &amp; Barro">
+  <rect width="48" height="48" rx="16" fill="#2445D6"/>
+  <!-- vasinho -->
+  <path d="M14 26h20l-2.5 12a3 3 0 0 1-3 2.4h-9a3 3 0 0 1-3-2.4z" fill="#FFC9B5"/>
+  <!-- folhas -->
+  <path d="M24 26c0-7-4-11-9-12 0 6 3 11 9 12z" fill="#F2E35C"/>
+  <path d="M24 26c0-8 4-13 10-14 0 7-4 13-10 14z" fill="#F2E35C" opacity=".85"/>
+</svg>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO ===== -->
+  <title>Raiz &amp; Barro | Plantas e cerâmica para a sua casa</title>
+  <meta name="description" content="Plantas, vasos e cerâmica artesanal com entrega em São Paulo. Monte seu pedido e finalize pelo WhatsApp.">
+  <meta name="theme-color" content="#2445D6">
+  <meta property="og:title" content="Raiz &amp; Barro | Plantas e cerâmica">
+  <meta property="og:description" content="Leve o verde pra dentro de casa.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1545241047-6083a3684587?w=1200&q=70">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- ======================================================================
+     ÍCONES SVG
+     ====================================================================== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-sacola" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-coracao" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+  <symbol id="i-busca" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+  <symbol id="i-mais" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-menos" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-lixo" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-olho" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-caminhao" viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+  <symbol id="i-troca" viewBox="0 0 24 24"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-cartao" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></symbol>
+  <symbol id="i-presente" viewBox="0 0 24 24"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></symbol>
+  <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-gota" viewBox="0 0 24 24"><path d="M12 2.7l5.7 5.7a8 8 0 1 1-11.4 0z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M3 20l1.4-4.2A8.5 8.5 0 1 1 7.8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></symbol>
+  <symbol id="i-cima" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="i-etiqueta" viewBox="0 0 24 24"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><path d="M7 7h.01"/></symbol>
+</svg>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- Barra de aviso no topo -->
+<div class="aviso-topo">
+  <p><strong>Frete grátis</strong> acima de R$ 199 · Use o cupom <strong>BEMVINDO10</strong> na primeira compra</p>
+</div>
+
+<!-- ======================================================================
+     CABEÇALHO
+     ====================================================================== -->
+<header class="topo" id="topo">
+  <div class="container topo__barra">
+    <a href="#inicio" class="logo" aria-label="Raiz e Barro — início">
+      <img src="assets/img/logo.svg" alt="" width="40" height="40">
+      <span>Raiz<em>&amp;</em>Barro</span>
+    </a>
+
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="#categorias">Categorias</a></li>
+        <li><a href="#vitrine">Produtos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#duvidas">Dúvidas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="topo__acoes">
+      <button class="icone-btn" type="button" id="btn-favoritos" aria-label="Ver favoritos">
+        <svg class="ic"><use href="#i-coracao"/></svg>
+        <span class="contagem" id="contagem-favoritos" hidden>0</span>
+      </button>
+      <button class="icone-btn icone-btn--sacola" type="button" id="btn-carrinho" aria-label="Abrir carrinho" aria-controls="carrinho">
+        <svg class="ic"><use href="#i-sacola"/></svg>
+        <span class="contagem" id="contagem-carrinho" hidden>0</span>
+      </button>
+      <button class="hamburguer" id="btn-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ======================================================================
+     HERO
+     ====================================================================== -->
+<section class="hero" id="inicio">
+  <div class="container hero__grade">
+    <div class="hero__texto">
+      <span class="selo-roda revelar">🌱 Coleção primavera</span>
+      <h1 class="revelar">Leve o <span class="marca-texto">verde</span> pra dentro de casa.</h1>
+      <p class="revelar">Plantas que se adaptam à sua rotina e cerâmica feita à mão por artesãos de São Paulo. Embalagem caprichada e entrega cuidadosa.</p>
+      <div class="hero__botoes revelar">
+        <a href="#vitrine" class="btn btn--azul btn--grande">Ver produtos <svg class="ic"><use href="#i-seta"/></svg></a>
+        <a href="#categorias" class="btn btn--contorno btn--grande">Categorias</a>
+      </div>
+      <ul class="hero__provas revelar">
+        <li><b>+3 mil</b> plantas entregues</li>
+        <li><b>4,9 ★</b> nas avaliações</li>
+      </ul>
+    </div>
+
+    <div class="hero__visual revelar">
+      <div class="hero__foto">
+        <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?w=900&q=70&auto=format&fit=crop"
+             srcset="https://images.unsplash.com/photo-1545241047-6083a3684587?w=500&q=65&auto=format&fit=crop 500w,
+                     https://images.unsplash.com/photo-1545241047-6083a3684587?w=900&q=70&auto=format&fit=crop 900w"
+             sizes="(max-width: 900px) 90vw, 45vw" width="900" height="1080" alt="Costela-de-adão em vaso de cerâmica ao lado de uma cadeira branca" fetchpriority="high">
+      </div>
+      <!-- Produto em destaque (botão de adicionar funciona de verdade) -->
+      <div class="hero__produto" id="hero-produto">
+        <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=160&q=60&auto=format&fit=crop" width="64" height="64" alt="">
+        <div><small>Mais vendida</small><strong>Costela-de-adão</strong><span>R$ 149,00</span></div>
+        <button class="btn-adicionar-mini" type="button" data-adicionar="costela-de-adao" aria-label="Adicionar Costela-de-adão ao carrinho"><svg class="ic"><use href="#i-mais"/></svg></button>
+      </div>
+      <span class="adesivo" aria-hidden="true">até<br><b>-20%</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- Faixa de benefícios -->
+<section class="beneficios" aria-label="Benefícios">
+  <div class="container beneficios__grade">
+    <div><svg class="ic"><use href="#i-caminhao"/></svg><p><b>Frete grátis</b>acima de R$ 199</p></div>
+    <div><svg class="ic"><use href="#i-troca"/></svg><p><b>Troca fácil</b>em até 7 dias</p></div>
+    <div><svg class="ic"><use href="#i-cartao"/></svg><p><b>Até 3x</b>sem juros</p></div>
+    <div><svg class="ic"><use href="#i-presente"/></svg><p><b>Embalagem</b>para presente</p></div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CATEGORIAS (clicar filtra a vitrine)
+     ====================================================================== -->
+<section class="secao" id="categorias">
+  <div class="container">
+    <header class="titulo revelar">
+      <h2>Compre por <span class="marca-texto">categoria</span></h2>
+    </header>
+    <div class="categorias">
+      <button class="categoria revelar" type="button" data-categoria="plantas">
+        <img src="https://images.unsplash.com/photo-1604762524889-3e2fcc145683?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="">
+        <span>Plantas <small id="qtd-plantas"></small></span>
+      </button>
+      <button class="categoria revelar" type="button" data-categoria="vasos">
+        <img src="https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="">
+        <span>Vasos <small id="qtd-vasos"></small></span>
+      </button>
+      <button class="categoria revelar" type="button" data-categoria="mesa">
+        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="">
+        <span>Mesa posta <small id="qtd-mesa"></small></span>
+      </button>
+      <button class="categoria revelar" type="button" data-categoria="cuidados">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="">
+        <span>Cuidados <small id="qtd-cuidados"></small></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     VITRINE — montada pelo JavaScript (assets/js/vitrine.js)
+     a partir da lista de produtos em assets/js/produtos.js
+     ====================================================================== -->
+<section class="secao secao--alt" id="vitrine">
+  <div class="container">
+    <header class="titulo titulo--linha revelar">
+      <h2>Nossos <span class="marca-texto">queridinhos</span></h2>
+      <p id="contagem-produtos" aria-live="polite"></p>
+    </header>
+
+    <div class="controles revelar">
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoria"></div>
+      <div class="controles__direita">
+        <label class="busca">
+          <svg class="ic"><use href="#i-busca"/></svg>
+          <span class="sr-only">Buscar produto</span>
+          <input type="search" id="busca" placeholder="Buscar…">
+        </label>
+        <label class="ordenar">
+          <span class="sr-only">Ordenar por</span>
+          <select id="ordenar">
+            <option value="relevancia">Mais relevantes</option>
+            <option value="menor">Menor preço</option>
+            <option value="maior">Maior preço</option>
+            <option value="nome">Nome (A–Z)</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="produtos" id="produtos"></div>
+    <div class="vazio" id="vazio" hidden>
+      <p>Nenhum produto encontrado 🌵</p>
+      <button class="btn btn--contorno" type="button" id="limpar-filtros">Limpar filtros</button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     SOBRE
+     ====================================================================== -->
+<section class="secao" id="sobre">
+  <div class="container sobre">
+    <div class="sobre__fotos revelar">
+      <img src="https://images.unsplash.com/photo-1530968464165-7a1861cbaf9f?w=700&q=65&auto=format&fit=crop" width="700" height="700" loading="lazy" alt="Prateleira com plantas em vasos de barro">
+      <span class="adesivo adesivo--rosa" aria-hidden="true">feito<br><b>à mão</b></span>
+    </div>
+    <div class="sobre__texto">
+      <h2 class="revelar">Uma lojinha com <span class="marca-texto">raiz</span></h2>
+      <p class="revelar">A Raiz &amp; Barro começou numa varanda, com mudas trocadas entre amigos. Hoje trabalhamos com produtores locais de plantas e com ceramistas que moldam cada peça à mão.</p>
+      <p class="revelar">Toda planta sai daqui com um cartãozinho de cuidados, e você pode chamar a gente no WhatsApp sempre que tiver dúvida.</p>
+      <ul class="sobre__lista revelar">
+        <li><svg class="ic"><use href="#i-check"/></svg> Plantas aclimatadas antes do envio</li>
+        <li><svg class="ic"><use href="#i-check"/></svg> Cerâmica de ateliês independentes</li>
+        <li><svg class="ic"><use href="#i-check"/></svg> Embalagem sem plástico</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     DÚVIDAS
+     ====================================================================== -->
+<section class="secao secao--alt" id="duvidas">
+  <div class="container container--estreito">
+    <header class="titulo revelar"><h2>Dúvidas <span class="marca-texto">frequentes</span></h2></header>
+    <div class="acordeao">
+      <details class="revelar" open><summary>Como funciona a compra?</summary><p>Você monta o carrinho aqui no site e finaliza pelo WhatsApp. A gente confirma o estoque, o frete e envia o link de pagamento (Pix ou cartão em até 3x).</p></details>
+      <details class="revelar"><summary>Vocês entregam em qual região?</summary><p>Entregamos em São Paulo capital e Grande SP. Plantas grandes vão por entrega própria, com todo cuidado.</p></details>
+      <details class="revelar"><summary>E se a planta chegar danificada?</summary><p>Trocamos sem custo. É só mandar uma foto pelo WhatsApp em até 7 dias após o recebimento.</p></details>
+      <details class="revelar"><summary>Não sei cuidar de plantas. E agora?</summary><p>Cada produto mostra a necessidade de luz e água. Comece pelas plantas com a etiqueta “fácil de cuidar”, como a espada-de-são-jorge e a jiboia.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CONTATO
+     ====================================================================== -->
+<section class="secao" id="contato">
+  <div class="container">
+    <div class="contato revelar">
+      <div>
+        <h2>Ficou com alguma <span class="marca-texto marca-texto--limao">dúvida?</span></h2>
+        <p>Fale com a gente pelo WhatsApp. Respondemos de segunda a sábado, das 9h às 18h.</p>
+      </div>
+      <div class="contato__acoes">
+        <a href="https://wa.me/5511999999999" data-whats class="btn btn--limao btn--grande" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> Chamar no WhatsApp</a>
+        <p class="contato__endereco">Loja física: Rua Harmonia, 300 – Vila Madalena, São Paulo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="container rodape__conteudo">
+    <a href="#inicio" class="logo"><img src="assets/img/logo.svg" alt="" width="36" height="36"><span>Raiz<em>&amp;</em>Barro</span></a>
+    <p>© <span id="ano">2026</span> Raiz &amp; Barro (loja fictícia). Pagamento e entrega simulados.</p>
+    <p class="rodape__aviso">Site demonstrativo — projeto de portfólio de Victor</p>
+  </div>
+</footer>
+
+<!-- ======================================================================
+     CARRINHO (painel lateral) — lógica em assets/js/carrinho.js
+     ====================================================================== -->
+<div class="fundo-escuro" id="fundo-escuro" hidden></div>
+<aside class="carrinho" id="carrinho" aria-label="Carrinho de compras" aria-hidden="true">
+  <header class="carrinho__topo">
+    <h2>Seu carrinho <span id="carrinho-qtd"></span></h2>
+    <button class="icone-btn" type="button" data-fechar-carrinho aria-label="Fechar carrinho"><svg class="ic"><use href="#i-x"/></svg></button>
+  </header>
+
+  <div class="frete-barra" id="frete-barra">
+    <p id="frete-texto"></p>
+    <div class="frete-barra__trilho"><span id="frete-progresso"></span></div>
+  </div>
+
+  <ul class="carrinho__itens" id="carrinho-itens"></ul>
+
+  <div class="carrinho__vazio" id="carrinho-vazio">
+    <span aria-hidden="true">🪴</span>
+    <p>Seu carrinho está vazio.</p>
+    <button class="btn btn--azul" type="button" data-fechar-carrinho data-ir-vitrine>Escolher produtos</button>
+  </div>
+
+  <footer class="carrinho__rodape" id="carrinho-rodape">
+    <form class="cupom" id="form-cupom">
+      <label class="sr-only" for="cupom">Cupom de desconto</label>
+      <input id="cupom" type="text" placeholder="Cupom de desconto" autocomplete="off">
+      <button type="submit">Aplicar</button>
+    </form>
+    <p class="cupom__dica">Teste o cupom <b>BEMVINDO10</b> (10% de desconto)</p>
+    <dl class="resumo">
+      <div><dt>Subtotal</dt><dd id="r-subtotal">R$ 0,00</dd></div>
+      <div id="linha-desconto" hidden><dt>Desconto</dt><dd id="r-desconto"></dd></div>
+      <div><dt>Frete</dt><dd id="r-frete"></dd></div>
+      <div class="resumo__total"><dt>Total</dt><dd id="r-total">R$ 0,00</dd></div>
+    </dl>
+    <button class="btn btn--azul btn--grande btn--bloco" type="button" id="finalizar"><svg class="ic"><use href="#i-chat"/></svg> Finalizar pelo WhatsApp</button>
+    <p class="carrinho__nota">Demonstração: nenhum pagamento é feito aqui. O pedido vai pronto para o WhatsApp da loja.</p>
+  </footer>
+</aside>
+
+<!-- Visualização rápida do produto -->
+<dialog class="modal" id="modal-produto" aria-labelledby="mp-nome">
+  <button class="icone-btn modal__fechar" type="button" data-fechar-modal aria-label="Fechar"><svg class="ic"><use href="#i-x"/></svg></button>
+  <div class="modal__grade">
+    <div class="modal__foto"><img id="mp-foto" alt=""></div>
+    <div class="modal__info">
+      <span class="modal__categoria" id="mp-categoria"></span>
+      <h2 id="mp-nome"></h2>
+      <p class="modal__preco"><span id="mp-preco"></span> <s id="mp-preco-antigo"></s></p>
+      <p id="mp-desc"></p>
+      <ul class="cuidados" id="mp-cuidados"></ul>
+      <fieldset class="variantes" id="mp-variantes">
+        <legend>Tamanho</legend>
+        <div id="mp-opcoes"></div>
+      </fieldset>
+      <div class="modal__comprar">
+        <div class="qtd" role="group" aria-label="Quantidade">
+          <button type="button" data-mp-qtd="-1" aria-label="Diminuir quantidade"><svg class="ic"><use href="#i-menos"/></svg></button>
+          <output id="mp-qtd">1</output>
+          <button type="button" data-mp-qtd="1" aria-label="Aumentar quantidade"><svg class="ic"><use href="#i-mais"/></svg></button>
+        </div>
+        <button class="btn btn--azul btn--grande" type="button" id="mp-adicionar"><svg class="ic"><use href="#i-sacola"/></svg> Adicionar</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<a href="https://wa.me/5511999999999" data-whats class="whats" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><svg class="ic"><use href="#i-chat"/></svg></a>
+<button class="voltar-topo" id="voltar-topo" type="button" aria-label="Voltar ao topo"><svg class="ic"><use href="#i-cima"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ===== Scripts (a ordem importa: dados → página → vitrine → carrinho) ===== -->
+<script src="assets/js/produtos.js?v=1" defer></script>
+<script src="assets/js/main.js?v=1" defer></script>
+<script src="assets/js/carrinho.js?v=2" defer></script>
+<script src="assets/js/vitrine.js?v=1" defer></script>
+</body>
+</html>
