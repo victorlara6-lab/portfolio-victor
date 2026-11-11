@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/portfolio.css?v=3">
+  <link rel="stylesheet" href="assets/css/portfolio.css?v=4">
   <!-- Marca que o JavaScript está ativo (as animações de entrada dependem disso) -->
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -222,11 +222,19 @@
 
     <!-- Outros projetos -->
     <div class="grade grade--3 projetos-mini">
-      <article class="card mini revelar">
-        <div class="mini__capa mini__capa--restaurante" aria-hidden="true"><span>🍝</span></div>
-        <span class="status status--breve">Em breve</span>
-        <h3>Site de restaurante</h3>
-        <p>Cardápio, galeria de fotos, horários e reservas pelo WhatsApp.</p>
+      <article class="card mini mini--pronto revelar">
+        <a href="restaurante/index.html" class="mini__capa mini__capa--foto" target="_blank" rel="noopener" aria-label="Abrir o site do restaurante Cucina Lume">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=640&q=65&auto=format&fit=crop" loading="lazy" alt="">
+          <span class="mini__ver">Ver site <svg class="ic"><use href="#i-seta-diag"/></svg></span>
+        </a>
+        <span class="status status--pronto">● No ar</span>
+        <h3>Cucina Lume — restaurante</h3>
+        <p>Cardápio interativo com busca e filtro vegetariano, prato do dia automático, galeria em tela cheia e reserva de mesa pelo WhatsApp.</p>
+        <ul class="tags tags--mini"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+        <div class="mini__links">
+          <a href="restaurante/index.html" target="_blank" rel="noopener">Ver site <svg class="ic"><use href="#i-seta-diag"/></svg></a>
+          <a href="https://github.com/victorlara6-lab/portfolio-victor/tree/main/restaurante" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Código</a>
+        </div>
       </article>
       <article class="card mini revelar">
         <div class="mini__capa mini__capa--loja" aria-hidden="true"><span>🛍️</span></div>

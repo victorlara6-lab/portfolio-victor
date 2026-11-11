@@ -274,6 +274,17 @@ strong { color: #fff; }
 .mini__capa--loja { background: linear-gradient(135deg, #1E1B3A, #4A3F9E); }
 .mini__capa--automacao { background: linear-gradient(135deg, #142016, #2F4A1B); }
 .mini__capa code { font-family: var(--fonte-codigo); font-size: .9rem; color: var(--limao); padding: 8px 14px; border-radius: 10px; background: rgba(0,0,0,.35); }
+/* Card de projeto pronto: capa com foto real e link */
+.mini__capa--foto { position: relative; display: block; }
+.mini__capa--foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--suave), filter .4s; }
+.mini__ver { position: absolute; inset: auto 12px 12px auto; display: inline-flex; align-items: center; gap: 6px; font-size: .85rem; font-weight: 700; background: var(--limao); color: #0C0E13; padding: .4em .9em; border-radius: 999px; opacity: 0; transform: translateY(8px); transition: opacity .3s, transform .3s var(--suave); }
+.mini:hover .mini__capa--foto img { transform: scale(1.07); filter: brightness(.8); }
+.mini:hover .mini__ver, .mini__capa--foto:focus-visible .mini__ver { opacity: 1; transform: none; }
+.mini--pronto { border-color: rgba(200,242,90,.25); }
+.tags--mini { margin: 14px 0 0; }
+.mini__links { display: flex; gap: 18px; margin-top: 14px; font-weight: 700; font-size: .92rem; }
+.mini__links a { display: inline-flex; align-items: center; gap: 6px; color: var(--limao); }
+.mini__links a:hover { text-decoration: underline; }
 .mini h3 { font-size: 1.25rem; margin: 12px 0 6px; }
 .mini p { color: var(--texto-suave); font-size: .95rem; }
 

@@ -1,0 +1,7 @@
+<!-- Logo da Cucina Lume (restaurante fictício) — desenhado em SVG, sem direitos de terceiros -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Cucina Lume">
+  <circle cx="24" cy="24" r="23" fill="#C63D2F"/>
+  <!-- chama estilizada (forno a lenha) -->
+  <path d="M24 9c2 5 8 8 8 15a8 8 0 0 1-16 0c0-4 2-6 4-8 0 3 1 5 3 5-1-4 0-8 1-12z" fill="#F7F0E6"/>
+  <path d="M24 26c1 2 3 3 3 5a3 3 0 0 1-6 0c0-2 2-3 3-5z" fill="#E3A63B"/>
+</svg>

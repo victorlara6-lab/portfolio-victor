@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO ===== -->
+  <title>Cucina Lume | Trattoria italiana em Pinheiros, São Paulo</title>
+  <meta name="description" content="Massa fresca feita todo dia, pizzas no forno a lenha e vinhos selecionados. Veja o cardápio e reserve sua mesa pelo WhatsApp.">
+  <meta name="theme-color" content="#2B1E17">
+  <meta property="og:title" content="Cucina Lume | Trattoria italiana">
+  <meta property="og:description" content="Massa fresca, fogo de lenha e mesa cheia. Reserve pelo WhatsApp.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=70">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- ===== Fontes ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css?v=1">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- ======================================================================
+     ÍCONES SVG
+     ====================================================================== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M3 20l1.4-4.2A8.5 8.5 0 1 1 7.8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></symbol>
+  <symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-local" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-telefone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-esquerda" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+  <symbol id="i-direita" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol>
+  <symbol id="i-cima" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></symbol>
+  <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+  <symbol id="i-busca" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+  <symbol id="i-folha" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.5-6.1"/></symbol>
+  <symbol id="i-pimenta" viewBox="0 0 24 24"><path d="M17 7c2 1 3 3 3 6 0 5-5 9-11 9-2 0-4-1-4-2 0-2 3-1 6-4s3-6 3-8c0-1 1-2 3-1z"/><path d="M17 7c0-2 1-4 3-5"/></symbol>
+  <symbol id="i-chef" viewBox="0 0 24 24"><path d="M6 13.9A4 4 0 0 1 7.2 6a5 5 0 0 1 9.6 0A4 4 0 0 1 18 13.9V21H6z"/><path d="M6 17h12"/></symbol>
+  <symbol id="i-menos" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-mais" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+</svg>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ======================================================================
+     CABEÇALHO (transparente em cima da foto; ganha fundo ao rolar)
+     ====================================================================== -->
+<header class="topo" id="topo">
+  <div class="container topo__barra">
+    <a href="#inicio" class="logo" aria-label="Cucina Lume — início">
+      <img src="assets/img/logo.svg" alt="" width="40" height="40">
+      <span>Cucina <em>Lume</em></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="#historia">Nossa história</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="#reservas" class="btn btn--tomate menu__cta">Reservar mesa</a>
+    </nav>
+    <button class="hamburguer" id="btn-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ======================================================================
+     HERO
+     ====================================================================== -->
+<section class="hero" id="inicio">
+  <div class="hero__foto" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=70&auto=format&fit=crop"
+         srcset="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=65&auto=format&fit=crop 800w,
+                 https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=70&auto=format&fit=crop 1600w"
+         sizes="100vw" alt="" fetchpriority="high">
+  </div>
+  <div class="container hero__conteudo">
+    <p class="status-casa revelar" id="status-casa"><span class="ponto"></span> <span>Verificando horário…</span></p>
+    <h1 class="revelar">Massa fresca,<br>fogo de lenha<br>e <em>mesa cheia.</em></h1>
+    <p class="hero__lead revelar">Trattoria italiana em Pinheiros. Massas feitas à mão todas as manhãs, pizzas no forno a lenha e uma carta de vinhos para dividir.</p>
+    <div class="hero__botoes revelar">
+      <a href="#reservas" class="btn btn--tomate btn--grande"><svg class="ic"><use href="#i-calendario"/></svg> Reservar mesa</a>
+      <a href="#cardapio" class="btn btn--claro btn--grande">Ver cardápio</a>
+    </div>
+  </div>
+  <a href="#historia" class="hero__rolar" aria-label="Rolar para a próxima seção"><svg class="ic"><use href="#i-baixo"/></svg></a>
+</section>
+
+<!-- Faixa rolando -->
+<div class="faixa" aria-hidden="true">
+  <ul class="faixa__trilho">
+    <li>Massa fresca todo dia</li><li>Forno a lenha</li><li>Vinhos selecionados</li><li>Receitas da nonna</li><li>Ingredientes locais</li>
+    <li>Massa fresca todo dia</li><li>Forno a lenha</li><li>Vinhos selecionados</li><li>Receitas da nonna</li><li>Ingredientes locais</li>
+  </ul>
+</div>
+
+<!-- ======================================================================
+     NOSSA HISTÓRIA
+     ====================================================================== -->
+<section class="secao" id="historia">
+  <div class="container historia">
+    <div class="historia__fotos revelar">
+      <img class="historia__foto historia__foto--1" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=700&q=70&auto=format&fit=crop" width="700" height="860" loading="lazy" alt="Chef finalizando um prato na cozinha">
+      <img class="historia__foto historia__foto--2" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=500&q=70&auto=format&fit=crop" width="500" height="500" loading="lazy" alt="Mãos cortando ervas frescas na tábua">
+      <span class="historia__selo"><b>desde</b>2012</span>
+    </div>
+    <div class="historia__texto">
+      <span class="sobretitulo revelar">Nossa história</span>
+      <h2 class="revelar">Uma cozinha que <em>cheira a domingo</em></h2>
+      <p class="revelar">A Cucina Lume nasceu do caderno de receitas da avó do chef Lucas Bellini. Aqui a massa é aberta à mão toda manhã, o molho cozinha devagar e o forno a lenha não descansa.</p>
+      <p class="revelar">Queremos que cada visita pareça um almoço em família: mesa farta, conversa alta e aquela vontade de pedir mais um pedaço.</p>
+      <ul class="numeros revelar">
+        <li><b data-contador="12">0</b><span>anos de casa</span></li>
+        <li><b data-contador="40">0</b><span>receitas da família</span></li>
+        <li><b data-contador="380" data-sufixo="°C">0</b><span>no forno a lenha</span></li>
+      </ul>
+      <p class="assinatura revelar">— Chef Lucas Bellini</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     PRATOS DO CHEF — carrossel de arrastar
+     ====================================================================== -->
+<section class="secao secao--escura" id="destaques">
+  <div class="container">
+    <header class="titulo-linha revelar">
+      <div>
+        <span class="sobretitulo sobretitulo--claro">Sugestões do chef</span>
+        <h2>Os mais <em>pedidos</em> da casa</h2>
+      </div>
+      <div class="titulo-linha__setas">
+        <button class="seta-btn" type="button" data-trilho="anterior" aria-label="Pratos anteriores"><svg class="ic"><use href="#i-esquerda"/></svg></button>
+        <button class="seta-btn" type="button" data-trilho="proximo" aria-label="Próximos pratos"><svg class="ic"><use href="#i-direita"/></svg></button>
+      </div>
+    </header>
+  </div>
+
+  <!-- Os cards são criados pelo JavaScript (assets/js/cardapio.js), a partir dos pratos marcados como "chef" -->
+  <div class="trilho" id="trilho-chef" tabindex="0" aria-label="Pratos sugeridos pelo chef"></div>
+
+  <!-- Prato do dia: muda conforme o dia da semana -->
+  <div class="container">
+    <article class="prato-dia revelar" id="prato-dia">
+      <span class="prato-dia__etiqueta">Prato do dia</span>
+      <div><h3 id="prato-dia-nome">…</h3><p id="prato-dia-desc"></p></div>
+      <strong id="prato-dia-preco"></strong>
+    </article>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CARDÁPIO — abas, filtro vegetariano e busca
+     ====================================================================== -->
+<section class="secao" id="cardapio">
+  <div class="container">
+    <header class="titulo revelar">
+      <span class="sobretitulo">Cardápio</span>
+      <h2>Feito na hora, <em>do jeito da nonna</em></h2>
+    </header>
+
+    <div class="cardapio__controles revelar">
+      <div class="abas" id="abas-cardapio" role="tablist" aria-label="Categorias do cardápio"></div>
+      <div class="cardapio__filtros">
+        <label class="busca">
+          <svg class="ic"><use href="#i-busca"/></svg>
+          <span class="sr-only">Buscar prato</span>
+          <input type="search" id="busca-prato" placeholder="Buscar prato ou ingrediente…">
+        </label>
+        <label class="chave">
+          <input type="checkbox" id="so-vegetariano">
+          <span class="chave__trilho" aria-hidden="true"></span>
+          <span>Só vegetarianos</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="cardapio__lista" id="lista-cardapio" role="tabpanel" aria-live="polite"></div>
+    <p class="cardapio__vazio" id="cardapio-vazio" hidden>Nenhum prato encontrado. Tente outra palavra 🍝</p>
+
+    <ul class="legenda">
+      <li><span class="selo selo--veg"><svg class="ic"><use href="#i-folha"/></svg></span> Vegetariano</li>
+      <li><span class="selo selo--picante"><svg class="ic"><use href="#i-pimenta"/></svg></span> Picante</li>
+      <li><span class="selo selo--chef"><svg class="ic"><use href="#i-chef"/></svg></span> Sugestão do chef</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================================================================
+     GALERIA — clique abre em tela cheia
+     ====================================================================== -->
+<section class="secao secao--papel" id="galeria">
+  <div class="container">
+    <header class="titulo revelar">
+      <span class="sobretitulo">Galeria</span>
+      <h2>Um pouco do <em>nosso dia a dia</em></h2>
+    </header>
+    <div class="galeria" id="galeria-fotos">
+      <button class="galeria__item galeria__item--alta revelar" type="button" data-foto="1517248135467-4c7edcad34c4" aria-label="Ampliar foto: salão principal"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Salão principal do restaurante"></button>
+      <button class="galeria__item revelar" type="button" data-foto="1574071318508-1cdbab80d002" aria-label="Ampliar foto: pizza margherita"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Pizza margherita saindo do forno"></button>
+      <button class="galeria__item revelar" type="button" data-foto="1528605248644-14dd04022da1" aria-label="Ampliar foto: amigos à mesa"><img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Amigos conversando à mesa"></button>
+      <button class="galeria__item galeria__item--larga revelar" type="button" data-foto="1555396273-367ea4eb4db5" aria-label="Ampliar foto: mezanino"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=65&auto=format&fit=crop" loading="lazy" alt="Mezanino com mesas de madeira"></button>
+      <button class="galeria__item revelar" type="button" data-foto="1470337458703-46ad1756a187" aria-label="Ampliar foto: drinque da casa"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Drinque sendo servido no copo"></button>
+      <button class="galeria__item galeria__item--alta revelar" type="button" data-foto="1563379926898-05f4575a45d8" aria-label="Ampliar foto: espaguete com camarão"><img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Frigideira com espaguete e camarões"></button>
+      <button class="galeria__item revelar" type="button" data-foto="1550966871-3ed3cdb5ed0c" aria-label="Ampliar foto: salão para eventos"><img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Salão arrumado para evento"></button>
+      <button class="galeria__item revelar" type="button" data-foto="1514362545857-3bc16c4c7d1b" aria-label="Ampliar foto: drinque com laranja"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Drinque com laranja desidratada"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     DEPOIMENTOS (fictícios — site de demonstração)
+     ====================================================================== -->
+<section class="secao" id="depoimentos">
+  <div class="container">
+    <header class="titulo revelar">
+      <span class="sobretitulo">Quem já veio</span>
+      <h2>Saiu daqui <em>e voltou</em></h2>
+    </header>
+    <div class="depoimentos">
+      <blockquote class="depo revelar"><span class="estrelas" aria-label="5 estrelas">★★★★★</span><p>“A melhor carbonara que comi fora da Itália. Atendimento carinhoso do começo ao fim.”</p><footer>— Juliana M.</footer></blockquote>
+      <blockquote class="depo revelar"><span class="estrelas" aria-label="5 estrelas">★★★★★</span><p>“Comemoramos nosso aniversário de casamento aqui e prepararam uma sobremesa surpresa. Inesquecível.”</p><footer>— Rafael e Bia</footer></blockquote>
+      <blockquote class="depo revelar"><span class="estrelas" aria-label="5 estrelas">★★★★★</span><p>“Pizza de massa leve, borda perfeita. Reservei pelo WhatsApp em dois minutos.”</p><footer>— Pedro H.</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     RESERVAS — formulário que monta a mensagem para o WhatsApp
+     (lógica em assets/js/reserva.js)
+     ====================================================================== -->
+<section class="secao secao--escura" id="reservas">
+  <div class="container reservas">
+    <div class="reservas__texto revelar">
+      <span class="sobretitulo sobretitulo--claro">Reservas</span>
+      <h2>Guarde sua <em>mesa</em></h2>
+      <p>Escolha o dia, o horário e quantas pessoas vêm. Confirmamos pelo WhatsApp em poucos minutos.</p>
+      <p class="recado">Grupos com mais de 12 pessoas? Fale direto com a gente!</p>
+      <img class="reservas__foto" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=700&q=65&auto=format&fit=crop" width="700" height="500" loading="lazy" alt="Prato de penne ao molho de tomate">
+    </div>
+
+    <form class="formulario revelar" id="form-reserva" novalidate>
+      <div class="campo-duplo">
+        <div class="campo">
+          <label for="r-nome">Nome</label>
+          <input id="r-nome" name="nome" type="text" autocomplete="name" required placeholder="Seu nome">
+          <small class="campo__erro" aria-live="polite"></small>
+        </div>
+        <div class="campo">
+          <label for="r-telefone">WhatsApp</label>
+          <input id="r-telefone" name="telefone" type="tel" inputmode="numeric" autocomplete="tel" required placeholder="(11) 99999-9999">
+          <small class="campo__erro" aria-live="polite"></small>
+        </div>
+      </div>
+
+      <div class="campo-duplo">
+        <div class="campo">
+          <label for="r-data">Dia</label>
+          <input id="r-data" name="data" type="date" required>
+          <small class="campo__erro" aria-live="polite"></small>
+        </div>
+        <div class="campo">
+          <span class="rotulo" id="rotulo-pessoas">Pessoas</span>
+          <div class="contador" role="group" aria-labelledby="rotulo-pessoas">
+            <button type="button" data-pessoas="-1" aria-label="Menos uma pessoa"><svg class="ic"><use href="#i-menos"/></svg></button>
+            <output id="r-pessoas" aria-live="polite">2</output>
+            <button type="button" data-pessoas="1" aria-label="Mais uma pessoa"><svg class="ic"><use href="#i-mais"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <fieldset class="campo">
+        <legend>Horário</legend>
+        <div class="horarios" id="horarios"><p class="horarios__vazio">Escolha o dia para ver os horários.</p></div>
+        <small class="campo__erro" aria-live="polite"></small>
+      </fieldset>
+
+      <fieldset class="campo">
+        <legend>É uma ocasião especial? <span class="opcional">(opcional)</span></legend>
+        <div class="chips">
+          <label><input type="radio" name="ocasiao" value="Aniversário"><span>🎂 Aniversário</span></label>
+          <label><input type="radio" name="ocasiao" value="Encontro"><span>🍷 Encontro</span></label>
+          <label><input type="radio" name="ocasiao" value="Família"><span>👨‍👩‍👧 Família</span></label>
+          <label><input type="radio" name="ocasiao" value="Negócios"><span>💼 Negócios</span></label>
+        </div>
+      </fieldset>
+
+      <div class="campo">
+        <label for="r-obs">Observações <span class="opcional">(opcional)</span></label>
+        <textarea id="r-obs" name="observacoes" rows="2" maxlength="300" placeholder="Cadeirinha de bebê, restrição alimentar…"></textarea>
+      </div>
+
+      <button class="btn btn--tomate btn--grande btn--bloco" type="submit"><svg class="ic"><use href="#i-chat"/></svg> Pedir reserva pelo WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<!-- ======================================================================
+     HORÁRIOS, ENDEREÇO E MAPA
+     ====================================================================== -->
+<section class="secao secao--papel" id="contato">
+  <div class="container contato">
+    <div class="contato__info revelar">
+      <span class="sobretitulo">Onde estamos</span>
+      <h2>Venha <em>com fome</em></h2>
+      <ul class="contato__lista">
+        <li><svg class="ic"><use href="#i-local"/></svg><div><b>Endereço</b><span>Rua dos Pinheiros, 800 – Pinheiros, São Paulo – SP</span></div></li>
+        <li><svg class="ic"><use href="#i-telefone"/></svg><div><b>Telefone</b><a href="tel:+551130000000">(11) 3000-0000</a></div></li>
+      </ul>
+      <table class="tabela-horarios" id="tabela-horarios">
+        <caption class="sr-only">Horário de funcionamento</caption>
+        <tbody></tbody>
+      </table>
+      <a class="btn btn--tomate" href="https://www.google.com/maps/search/?api=1&query=Rua+dos+Pinheiros,+800,+S%C3%A3o+Paulo" target="_blank" rel="noopener"><svg class="ic"><use href="#i-local"/></svg> Como chegar</a>
+    </div>
+    <div class="contato__mapa revelar">
+      <iframe title="Mapa com a localização do restaurante" loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-46.6900%2C-23.5700%2C-46.6740%2C-23.5600&amp;layer=mapnik&amp;marker=-23.5652%2C-46.6820"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="container rodape__conteudo">
+    <a href="#inicio" class="logo logo--claro"><img src="assets/img/logo.svg" alt="" width="36" height="36"><span>Cucina <em>Lume</em></span></a>
+    <p>Rua dos Pinheiros, 800 – São Paulo · (11) 3000-0000</p>
+    <p>© <span id="ano">2026</span> Cucina Lume (restaurante fictício).</p>
+    <p class="rodape__aviso">Site demonstrativo — projeto de portfólio de Victor</p>
+  </div>
+</footer>
+
+<!-- WhatsApp flutuante -->
+<a href="https://wa.me/5511999999999" data-whats class="whats" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><svg class="ic"><use href="#i-chat"/></svg></a>
+<button class="voltar-topo" id="voltar-topo" type="button" aria-label="Voltar ao topo"><svg class="ic"><use href="#i-cima"/></svg></button>
+
+<!-- Tela cheia da galeria -->
+<dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+  <img id="lightbox-img" alt="">
+  <p id="lightbox-legenda"></p>
+  <button class="lightbox__btn lightbox__fechar" type="button" data-lightbox="fechar" aria-label="Fechar"><svg class="ic"><use href="#i-x"/></svg></button>
+  <button class="lightbox__btn lightbox__anterior" type="button" data-lightbox="anterior" aria-label="Foto anterior"><svg class="ic"><use href="#i-esquerda"/></svg></button>
+  <button class="lightbox__btn lightbox__proximo" type="button" data-lightbox="proximo" aria-label="Próxima foto"><svg class="ic"><use href="#i-direita"/></svg></button>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ===== Scripts ===== -->
+<script src="assets/js/main.js?v=1" defer></script>
+<script src="assets/js/cardapio.js?v=1" defer></script>
+<script src="assets/js/reserva.js?v=1" defer></script>
+</body>
+</html>
