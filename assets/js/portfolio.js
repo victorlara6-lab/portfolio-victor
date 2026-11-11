@@ -16,9 +16,9 @@
 /* ---------- 1. CONFIGURAÇÃO ---------- */
 const CONFIG = {
   // >>> TROQUE pelo SEU número (55 + DDD + número, só dígitos)
-  whatsapp: '5511999999999',
+  whatsapp: '5544991016921',
   // >>> Cole aqui o link do seu perfil no Workana (deixe '' para esconder o botão)
-  workana: '',
+  workana: 'https://www.workana.com/freelancer/6f1714c6d8a179efbdaed61bd7704dc3',
 };
 
 const $ = (s, r = document) => r.querySelector(s);
